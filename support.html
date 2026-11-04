@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="title-en" content="Support – Tinta">
+<meta name="title-it" content="Supporto – Tinta">
+<title>Support – Tinta</title>
+<link rel="icon" href="icon.png">
+<style>
+:root{--bg:#0F0F14;--fg:#ECEAF2;--muted:#A3A0B2;--card:#181822;--line:#2A2A38;--a1:#8B3DFF;--a2:#E8317A;--a3:#FFB547;--link:#C9A7FF}
+@media (prefers-color-scheme: light){:root{--bg:#FBFAFD;--fg:#1B1A22;--muted:#5D5A6B;--card:#FFFFFF;--line:#E6E3EE;--link:#6A2BD9}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+a{color:var(--link)}
+.wrap{max-width:760px;margin:0 auto;padding:28px 22px 64px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header img{width:44px;height:44px;border-radius:10px}
+header .brand{font-weight:700;font-size:18px;text-decoration:none;color:var(--fg)}
+nav{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a[aria-current]{color:var(--fg);font-weight:600}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:3px 10px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+h1{font-size:34px;line-height:1.2;margin:48px 0 8px;letter-spacing:-.01em}
+h2{font-size:21px;margin:36px 0 8px}
+.grad{background:linear-gradient(90deg,var(--a1),var(--a2) 55%,var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:var(--muted);margin:0 0 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
+.pal{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.pal span{font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.btn{display:inline-block;padding:10px 18px;border-radius:10px;background:linear-gradient(90deg,var(--a1),var(--a2));color:#fff;text-decoration:none;font-weight:600}
+ul{padding-left:22px}
+li{margin:4px 0}
+small,.fine{color:var(--muted);font-size:13px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:18px}
+[data-lang]{display:none}
+html[lang=en] [data-lang=en],html[lang=it] [data-lang=it]{display:block}
+html[lang=en] span[data-lang=en],html[lang=it] span[data-lang=it]{display:inline}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+summary{cursor:pointer;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img src="icon.png" alt="">
+  <a class="brand" href="index.html">Tinta – Code Themes</a>
+  <nav>
+    <a href="index.html"><span data-lang="en">Home</span><span data-lang="it">Home</span></a>
+    <a href="support.html" aria-current="page"><span data-lang="en">Support</span><span data-lang="it">Supporto</span></a>
+    <a href="privacy.html">Privacy</a>
+    <span class="lang" role="group" aria-label="Language / Lingua"><button type="button" data-set="en">EN</button><button type="button" data-set="it">IT</button></span>
+  </nav>
+</header>
+<main>
+
+<section data-lang="en">
+  <h1>Support</h1>
+  <p class="lead">Something not working, or an idea for a palette? Write to <a href="mailto:usableutilities@gmail.com">usableutilities@gmail.com</a>. Please include your macOS version, Tinta's version (Tinta &rsaquo; About) and the editor involved. Replies usually within a few working days.</p>
+  <h2>Requirements</h2>
+  <p>macOS 14 Sonoma or later. Each editor must be installed separately; Tinta does not include or install them.</p>
+  <h2>Frequently asked questions</h2>
+  <details><summary>How do I apply a theme?</summary><p>Open &ldquo;Linked editors&rdquo; (Editor collegati), press &ldquo;Link&rdquo; (Collega) on an editor and choose the folder macOS suggests. Then pick a palette and press &ldquo;Apply&rdquo; (Applica). You link each editor only once.</p></details><details><summary>Why does Tinta ask for folders?</summary><p>Tinta runs in Apple's App Sandbox: it can write only to folders you choose. Each folder is used only for that editor's theme and settings files.</p></details><details><summary>How do I undo everything?</summary><p>Press &ldquo;Unlink&rdquo; (Scollega) on an editor. Tinta removes exactly what it added, restores the copy of your settings it saved, and forgets the folder.</p></details><details><summary>The Claude Code tab does not change.</summary><p>The Code tab is themed by the free Tinta plugin for Claude Code. After linking ~/.claude, start a new session in the Code tab (or restart the Claude app) so Claude Code loads the plugin. You can also install the plugin yourself in Claude Code; Tinta shows the steps.</p></details><details><summary>VS Code, Cursor, Windsurf or VSCodium need a restart.</summary><p>Without the companion extension the theme is applied when the editor reloads its window. Install the free &ldquo;Tinta – Code Themes&rdquo; extension from the Visual Studio Marketplace or Open VSX to switch instantly and color the whole interface.</p></details><details><summary>JetBrains IDEs need a restart.</summary><p>Without the companion plugin Tinta writes the editor color scheme, which the IDE reads at startup. The free Tinta plugin from the JetBrains Marketplace switches instantly and also colors panels and toolbars.</p></details><details><summary>Xcode does not pick the theme.</summary><p>Choose the &ldquo;Tinta&rdquo; theme once in Xcode &rsaquo; Settings &rsaquo; Themes. After that, Apply updates it.</p></details><details><summary>Terminal, iTerm2, Ghostty, Warp, Zed, zsh</summary><p>iTerm2, Ghostty, Warp and Zed pick up the Tinta theme by themselves. For Terminal press &ldquo;Update Terminal&rdquo; (Aggiorna Terminale). For the zsh prompt, Tinta adds one line to ~/.zshrc only if you click the button, or uses your Starship palette.</p></details><details><summary>What does Tinta Pro include?</summary><p>Tinta is free with the complete Salvia palette. Tinta Pro is a one-time in-app purchase that unlocks every palette and style, future palettes, sounds, effects and custom themes. Updates are included; there is no subscription.</p></details><details><summary>How do I restore Tinta Pro on another Mac?</summary><p>Sign in with the same Apple Account in the App Store and press &ldquo;Restore Purchases&rdquo; in Tinta's Store. Refunds are handled by Apple at reportaproblem.apple.com.</p></details><details><summary>Can I turn sounds off?</summary><p>Sounds (Tinta Pro) are off by default. Turn them on or off in the app's settings or in the theme editor.</p></details><details><summary>Is my data collected?</summary><p>Only anonymous usage statistics (no personal data, no tracking), which you can turn off with &ldquo;Invia statistiche anonime&rdquo; in Settings. See the <a href="privacy.html">privacy policy</a>.</p></details>
+</section>
+<section data-lang="it">
+  <h1>Supporto</h1>
+  <p class="lead">Qualcosa non va, o hai un'idea per una palette? Scrivi a <a href="mailto:usableutilities@gmail.com">usableutilities@gmail.com</a>. Indica la versione di macOS, quella di Tinta (Tinta &rsaquo; Informazioni) e l'editor coinvolto. Di solito rispondiamo entro pochi giorni lavorativi.</p>
+  <h2>Requisiti</h2>
+  <p>macOS 14 Sonoma o successivo. Ogni editor va installato a parte: Tinta non li include e non li installa.</p>
+  <h2>Domande frequenti</h2>
+  <details><summary>Come applico un tema?</summary><p>Apri &laquo;Editor collegati&raquo;, premi &laquo;Collega&raquo; su un editor e scegli la cartella che macOS propone. Poi scegli una palette e premi &laquo;Applica&raquo;. Ogni editor si collega una volta sola.</p></details><details><summary>Perch&eacute; Tinta chiede delle cartelle?</summary><p>Tinta funziona nella App Sandbox di Apple: pu&ograve; scrivere solo nelle cartelle che scegli tu. Ogni cartella serve solo per i file di tema e di impostazioni di quell'editor.</p></details><details><summary>Come annullo tutto?</summary><p>Premi &laquo;Scollega&raquo; su un editor. Tinta toglie esattamente cio&grave; che ha aggiunto, ripristina la copia delle impostazioni che aveva salvato e dimentica la cartella.</p></details><details><summary>La scheda Code di Claude non cambia.</summary><p>La scheda Code prende i colori dal plugin Tinta per Claude Code, gratuito. Dopo aver collegato ~/.claude apri una nuova sessione nella scheda Code (o riavvia l'app Claude) perch&eacute; Claude Code carichi il plugin. Puoi anche installare il plugin da te in Claude Code: Tinta mostra i passaggi.</p></details><details><summary>VS Code, Cursor, Windsurf o VSCodium vanno riavviati.</summary><p>Senza l'estensione compagna il tema si applica quando l'editor ricarica la finestra. Installa l'estensione gratuita &laquo;Tinta – Code Themes&raquo; dal Visual Studio Marketplace o da Open VSX per il cambio istantaneo e i colori di tutta l'interfaccia.</p></details><details><summary>Gli IDE JetBrains vanno riavviati.</summary><p>Senza il plugin compagno Tinta scrive lo schema colori dell'editor, che l'IDE legge all'avvio. Il plugin Tinta gratuito dal JetBrains Marketplace cambia tema all'istante e colora anche pannelli e barre.</p></details><details><summary>Xcode non prende il tema.</summary><p>Scegli una volta il tema &laquo;Tinta&raquo; in Xcode &rsaquo; Settings &rsaquo; Themes. Da li&grave; in poi Applica lo aggiorna.</p></details><details><summary>Terminale, iTerm2, Ghostty, Warp, Zed, zsh</summary><p>iTerm2, Ghostty, Warp e Zed prendono il tema Tinta da soli. Per Terminale premi &laquo;Aggiorna Terminale&raquo;. Per il prompt di zsh Tinta aggiunge una riga a ~/.zshrc solo se premi il pulsante, oppure usa la tua palette di Starship.</p></details><details><summary>Cosa include Tinta Pro?</summary><p>Tinta &egrave; gratis con la palette Salvia completa. Tinta Pro &egrave; un acquisto in-app unico che sblocca ogni palette e stile, le palette future, suoni, effetti e temi personalizzati. Aggiornamenti inclusi, nessun abbonamento.</p></details><details><summary>Come ripristino Tinta Pro su un altro Mac?</summary><p>Accedi all'App Store con lo stesso Account Apple e premi &laquo;Ripristina acquisti&raquo; nello Store di Tinta. I rimborsi li gestisce Apple su reportaproblem.apple.com.</p></details><details><summary>Posso spegnere i suoni?</summary><p>I suoni (Tinta Pro) sono spenti di serie. Si accendono e si spengono nelle impostazioni dell'app o nell'editor del tema.</p></details><details><summary>Raccogliete dati?</summary><p>Solo statistiche d'uso anonime (niente dati personali, niente tracciamento), che spegni con &laquo;Invia statistiche anonime&raquo; nelle Impostazioni. Vedi l'<a href="privacy.html">informativa sulla privacy</a>.</p></details>
+</section>
+
+</main>
+<footer class="fine">
+  <div data-lang="en">Tinta is an independent app, not affiliated with or endorsed by Anthropic, Microsoft, JetBrains or Apple. Claude and Claude Code are trademarks of Anthropic, PBC; Visual Studio Code of Microsoft Corporation; IntelliJ IDEA and other JetBrains product names of JetBrains s.r.o.; Xcode and Mac App Store of Apple Inc. Other names belong to their respective owners and are used only to describe compatibility.<br>&copy; 2026 Gabriele Chesi. This website uses no cookies, analytics or external resources.</div>
+  <div data-lang="it">Tinta e&grave; un'app indipendente, non affiliata n&eacute; approvata da Anthropic, Microsoft, JetBrains o Apple. Claude e Claude Code sono marchi di Anthropic, PBC; Visual Studio Code di Microsoft Corporation; IntelliJ IDEA e gli altri nomi dei prodotti JetBrains di JetBrains s.r.o.; Xcode e Mac App Store di Apple Inc. Gli altri nomi appartengono ai rispettivi proprietari e sono usati solo per indicare la compatibilit&agrave;.<br>&copy; 2026 Gabriele Chesi. Questo sito non usa cookie, statistiche n&eacute; risorse esterne.</div>
+</footer>
+</div>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search).get('lang');
+  var nav = (navigator.language || 'en').toLowerCase();
+  var lang = q === 'it' || q === 'en' ? q : (nav.indexOf('it') === 0 ? 'it' : 'en');
+  function set(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.set === l); });
+    var t = document.querySelector('meta[name=title-' + l + ']'); if (t) document.title = t.content;
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ set(b.dataset.set); }); });
+  set(lang);
+})();
+</script>
+</body>
+</html>
