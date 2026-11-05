@@ -2,103 +2,1013 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07070B">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
-<meta name="title-en" content="Tinta – Code Themes">
-<meta name="title-it" content="Tinta – Code Themes">
-<title>Tinta – Code Themes</title>
+<title>Tinta – Code Themes for every editor on your Mac</title>
+<meta name="description" content="One click applies a coordinated color theme to VS Code and its forks, JetBrains IDEs, Xcode, Zed, Claude Code and your terminal. Free to start on the Mac App Store.">
+<link rel="canonical" href="https://tinta.usableutilities.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tinta – Code Themes">
+<meta property="og:title" content="Tinta – Code Themes for every editor on your Mac">
+<meta property="og:description" content="One click applies a coordinated color theme to VS Code and its forks, JetBrains IDEs, Xcode, Zed, Claude Code and your terminal. Free to start on the Mac App Store.">
+<meta property="og:url" content="https://tinta.usableutilities.com/">
+<meta property="og:image" content="https://tinta.usableutilities.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="img/icon-64.png">
 <link rel="icon" href="icon.png">
-<style>
-:root{--bg:#0F0F14;--fg:#ECEAF2;--muted:#A3A0B2;--card:#181822;--line:#2A2A38;--a1:#8B3DFF;--a2:#E8317A;--a3:#FFB547;--link:#C9A7FF}
-@media (prefers-color-scheme: light){:root{--bg:#FBFAFD;--fg:#1B1A22;--muted:#5D5A6B;--card:#FFFFFF;--line:#E6E3EE;--link:#6A2BD9}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
-a{color:var(--link)}
-.wrap{max-width:760px;margin:0 auto;padding:28px 22px 64px}
-header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-header img{width:44px;height:44px;border-radius:10px}
-header .brand{font-weight:700;font-size:18px;text-decoration:none;color:var(--fg)}
-nav{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:15px}
-nav a{text-decoration:none;color:var(--muted)}
-nav a[aria-current]{color:var(--fg);font-weight:600}
-.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:3px 10px;cursor:pointer}
-.lang button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
-h1{font-size:34px;line-height:1.2;margin:48px 0 8px;letter-spacing:-.01em}
-h2{font-size:21px;margin:36px 0 8px}
-.grad{background:linear-gradient(90deg,var(--a1),var(--a2) 55%,var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:19px;color:var(--muted);margin:0 0 24px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
-.pal{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
-.pal span{font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-.btn{display:inline-block;padding:10px 18px;border-radius:10px;background:linear-gradient(90deg,var(--a1),var(--a2));color:#fff;text-decoration:none;font-weight:600}
-ul{padding-left:22px}
-li{margin:4px 0}
-small,.fine{color:var(--muted);font-size:13px}
-footer{margin-top:56px;border-top:1px solid var(--line);padding-top:18px}
-[data-lang]{display:none}
-html[lang=en] [data-lang=en],html[lang=it] [data-lang=it]{display:block}
-html[lang=en] span[data-lang=en],html[lang=it] span[data-lang=it]{display:inline}
-details{border-bottom:1px solid var(--line);padding:10px 0}
-summary{cursor:pointer;font-weight:600}
-</style>
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="(max-width: 760px) 100vw, 1040px" imagesrcset="img/gallery-1204.avif 1204w, img/gallery-1800.avif 1800w, img/gallery-2408.avif 2408w">
+<style>@property --c1 { syntax: '<color>'; inherits: true; initial-value: #A970FF; }
+@property --c2 { syntax: '<color>'; inherits: true; initial-value: #F0508F; }
+@property --c3 { syntax: '<color>'; inherits: true; initial-value: #4B3DFF; }
+@property --c4 { syntax: '<color>'; inherits: true; initial-value: #EABD81; }
+:root {
+--bg: #07070B; --bg2: #0D0D14; --fg: #F2F0F7; --muted: #A6A3B5; --dim: #8B8896; --line: #FFFFFF14; --line2: #FFFFFF22;
+--card: #FFFFFF07; --card2: #FFFFFF0C; --radius: 22px; --max: 1200px;
+--c1: #A970FF; --c2: #F0508F; --c3: #4B3DFF; --c4: #EABD81;
+--font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+--display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+--mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+color-scheme: dark;
+transition: --c1 .9s ease, --c2 .9s ease, --c3 .9s ease, --c4 .9s ease;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--c1); outline-offset: 3px; border-radius: 8px; }
+.wrap { width: min(var(--max), 100% - 40px); margin-inline: auto; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sr:focus { position: fixed; left: 12px; top: 12px; width: auto; height: auto; clip: auto; z-index: 100; background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 10px; }
+.nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(160%) blur(18px); -webkit-backdrop-filter: saturate(160%) blur(18px);
+background: color-mix(in srgb, var(--bg) 72%, transparent); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 22px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 650; letter-spacing: -.01em; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+.brand small { color: var(--muted); font-weight: 500; }
+.nav .links { display: flex; gap: 22px; margin-left: auto; align-items: center; font-size: 14.5px; }
+.nav .links a { text-decoration: none; color: var(--muted); transition: color .2s; }
+.nav .links a:hover, .nav .links a[aria-current] { color: var(--fg); }
+.btn { display: inline-flex; align-items: center; gap: 10px; border: 0; cursor: pointer; text-decoration: none; font-weight: 600; letter-spacing: -.005em;
+border-radius: 999px; padding: 13px 22px; font-size: 16px; transition: transform .2s ease, box-shadow .3s ease, background .3s; white-space: nowrap; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-primary { color: #fff; background: linear-gradient(100deg, var(--c1), var(--c2)); box-shadow: 0 10px 34px -10px color-mix(in srgb, var(--c1) 70%, transparent), inset 0 1px 0 #FFFFFF40; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 44px -10px color-mix(in srgb, var(--c2) 75%, transparent), inset 0 1px 0 #FFFFFF50; }
+.btn-ghost { background: var(--card2); box-shadow: inset 0 0 0 1px var(--line2); }
+.btn-ghost:hover { background: #FFFFFF14; }
+.btn-sm { padding: 8px 15px; font-size: 14px; }
+.lang { display: inline-flex; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line2); overflow: hidden; }
+.lang button { border: 0; background: transparent; color: var(--muted); font-size: 12.5px; padding: 4px 10px; cursor: pointer; }
+.lang button[aria-pressed=true] { background: var(--fg); color: var(--bg); }
+.hero { position: relative; padding: 92px 0 40px; isolation: isolate; }
+.aura { position: absolute; inset: -120px 0 auto 0; height: 1100px; z-index: -1; pointer-events: none; overflow: hidden; }
+.aura i { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; will-change: transform; }
+.aura i:nth-child(1) { width: 720px; height: 520px; left: 50%; top: 80px; margin-left: -760px; background: var(--c1); animation: float1 18s ease-in-out infinite; }
+.aura i:nth-child(2) { width: 620px; height: 520px; left: 50%; top: 40px; margin-left: 120px; background: var(--c2); opacity: .42; animation: float2 22s ease-in-out infinite; }
+.aura i:nth-child(3) { width: 820px; height: 420px; left: 50%; top: 520px; margin-left: -410px; background: var(--c3); opacity: .35; animation: float1 26s ease-in-out infinite reverse; }
+.aura::after { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 50% 0%, transparent 0%, var(--bg) 78%), linear-gradient(transparent 60%, var(--bg)); }
+@keyframes float1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(60px, 40px) scale(1.08); } }
+@keyframes float2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-70px, 50px) scale(.94); } }
+.grid-bg { position: absolute; inset: 0 0 auto 0; height: 900px; z-index: -1; pointer-events: none;
+background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px;
+mask-image: radial-gradient(60% 50% at 50% 30%, #000 0%, transparent 75%); -webkit-mask-image: radial-gradient(60% 50% at 50% 30%, #000 0%, transparent 75%); opacity: .5; }
+.hero-copy { text-align: center; max-width: 1120px; margin: 0 auto; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted); padding: 6px 14px 6px 8px; border-radius: 999px;
+background: #FFFFFF08; box-shadow: inset 0 0 0 1px var(--line2); margin-bottom: 26px; }
+.eyebrow .dots { display: inline-flex; }
+.eyebrow .dots i { width: 14px; height: 14px; border-radius: 50%; margin-left: -4px; box-shadow: 0 0 0 2px var(--bg); }
+.eyebrow .dots i:first-child { margin-left: 0; }
+h1, h2, h3 { font-family: var(--display); letter-spacing: -.035em; line-height: 1.02; margin: 0; font-weight: 700; }
+h1 { font-size: clamp(40px, 8.4vw, 104px); letter-spacing: -.045em; }
+h1 .l2, .grad { background: linear-gradient(95deg, var(--c1) 5%, var(--c2) 55%, var(--c4) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h1 .l2 { padding-bottom: .08em; display: inline-block; }
+.lead { font-size: clamp(18px, 2.1vw, 21px); color: var(--muted); max-width: 720px; margin: 26px auto 0; line-height: 1.55; }
+.lead b { color: var(--fg); font-weight: 600; }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+.meta { margin-top: 18px; color: var(--dim); font-size: 14px; display: flex; gap: 8px 18px; justify-content: center; flex-wrap: wrap; }
+.meta span { display: inline-flex; align-items: center; gap: 7px; }
+.meta span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--c1); }
+.stage { position: relative; margin: 72px auto 0; width: min(1240px, 100% - 32px); perspective: 2000px; }
+.stage::before { content: ""; position: absolute; inset: 8% 6% -4%; border-radius: 40px; z-index: -1; filter: blur(70px); opacity: .55;
+background: linear-gradient(110deg, var(--c1), var(--c2) 50%, var(--c3)); }
+.appwin { --sb: 16.4%; container-type: inline-size; position: relative; display: grid; grid-template-columns: var(--sb) 1fr; border-radius: 14px; overflow: hidden;
+background: #141419; box-shadow: 0 0 0 1px #FFFFFF1F, 0 1px 0 #FFFFFF26 inset, 0 50px 120px -30px #000000E0, 0 30px 60px -30px #000; }
+.hero .appwin { transform: rotateX(8deg) scale(.97); transform-origin: 50% 0; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+.hero .appwin.flat { transform: none; }
+.aw-side { background: #26262A; border-right: 1px solid #00000066; font-size: .9cqw; display: flex; flex-direction: column; padding: 1.1em .7em .9em; gap: .2em; color: #ECECEC; }
+.lights { display: flex; gap: .62em; padding: .15em .5em 1.6em; }
+.lights i { width: .92em; height: .92em; border-radius: 50%; background: #FF5F57; box-shadow: inset 0 0 0 .5px #00000033; }
+.lights i:nth-child(2) { background: #FEBC2E; } .lights i:nth-child(3) { background: #28C840; }
+.aw-brand { display: flex; align-items: center; gap: .7em; padding: 0 .55em 1.1em; }
+.aw-brand img { width: 2em; height: 2em; border-radius: .5em; }
+.aw-brand b { display: block; font-size: 1em; font-weight: 600; line-height: 1.15; }
+.aw-brand small { display: block; font-size: .85em; color: #9A9A9E; line-height: 1.15; }
+.aw-sec { font-size: .82em; font-weight: 600; color: #8E8E93; padding: .9em .7em .35em; }
+.aw-item { display: flex; align-items: center; gap: .6em; padding: .42em .7em; border-radius: .5em; font-size: 1em; }
+.aw-item svg { width: 1.15em; height: 1.15em; color: var(--c1); flex: none; }
+.aw-item.on { background: #FFFFFF1A; }
+.aw-item em { margin-left: auto; font-style: normal; color: #9A9A9E; font-size: .88em; }
+.aw-inuse { margin-top: auto; background: #FFFFFF0F; border-radius: .9em; padding: .75em; }
+.aw-inuse .mesh { height: 2.6em; border-radius: .55em; background: radial-gradient(60% 120% at 85% 15%, #FF5CA8B0, transparent 70%), radial-gradient(60% 120% at 12% 90%, #4B3DFFB0, transparent 70%), radial-gradient(70% 120% at 60% 90%, #B79CFFA0, transparent 70%), #8B3DFF; }
+.aw-inuse .row { display: flex; align-items: center; justify-content: space-between; gap: .4em; margin-top: .6em; font-size: .92em; font-weight: 600; }
+.aw-inuse .pill { background: #F5C84C; color: #2A2205; font-size: .78em; padding: .1em .55em; border-radius: 99px; font-weight: 700; }
+.aw-inuse p { margin: .3em 0 0; font-size: .82em; color: #9A9A9E; line-height: 1.3; }
+.aw-main { min-width: 0; background: #14141A; }
+.aw-bar { height: 3.6cqw; display: flex; align-items: center; justify-content: center; position: relative; background: #1D1D1E; border-bottom: 1px solid #000; font-size: .9cqw; color: #ECECEC; }
+.aw-bar .title { position: absolute; left: 1.6em; font-weight: 600; font-size: 1.15em; }
+.seg { display: inline-flex; background: #FFFFFF10; border-radius: .7em; padding: .22em; gap: .2em; }
+.seg span { display: inline-flex; align-items: center; gap: .45em; padding: .35em .85em; border-radius: .55em; color: #BDBDC2; }
+.seg span i { width: .95em; height: .95em; border-radius: .25em; box-shadow: inset 0 0 0 1.5px var(--c1); }
+.seg span.on { background: color-mix(in srgb, var(--c1) 26%, transparent); color: color-mix(in srgb, var(--c1) 70%, #fff); }
+.seg span.on i { background: linear-gradient(135deg, var(--c1), var(--c2)); box-shadow: none; }
+.seg span:nth-child(3) i { background: var(--c1); box-shadow: none; opacity: .7; }
+.aw-main picture, .aw-main img { width: 100%; height: auto; }
+@media (max-width: 760px) {
+.appwin { grid-template-columns: 1fr; }
+.aw-side { display: none; }
+.aw-bar { height: 7cqw; font-size: 2.2cqw; }
+.aw-bar .title { display: none; }
+.hero .appwin { transform: none; }
+}
+.works { padding: 56px 0 24px; }
+.works p { text-align: center; color: var(--dim); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 22px; }
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.marquee ul { display: flex; gap: 14px; list-style: none; margin: 0; padding: 0; width: max-content; animation: scroll 60s linear infinite; }
+.marquee:hover ul { animation-play-state: paused; }
+.marquee li { white-space: nowrap; padding: 10px 18px; border-radius: 999px; background: #FFFFFF06; box-shadow: inset 0 0 0 1px var(--line); color: #D6D3E0; font-size: 15px; font-weight: 500; }
+.marquee li.k { color: var(--fg); font-weight: 650; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+section.block { padding: 120px 0 0; }
+.shead { max-width: 780px; margin: 0 auto 48px; text-align: center; }
+.kicker { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--c1); margin-bottom: 18px; }
+h2 { font-size: clamp(36px, 5.6vw, 64px); }
+.shead p { color: var(--muted); font-size: clamp(17px, 1.9vw, 19.5px); margin: 20px auto 0; max-width: 680px; }
+.controls { position: sticky; top: 64px; z-index: 20; padding: 14px 0; margin-bottom: 18px;
+background: linear-gradient(var(--bg) 70%, transparent); }
+.palettes { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.pbtn { display: inline-flex; align-items: center; gap: 9px; padding: 8px 14px 8px 9px; border-radius: 999px; border: 0; cursor: pointer; background: #FFFFFF08;
+box-shadow: inset 0 0 0 1px var(--line); color: #D9D6E3; font-size: 14.5px; font-weight: 550; transition: background .2s, box-shadow .2s, transform .2s; }
+.pbtn:hover { background: #FFFFFF12; }
+.pbtn .sw { width: 20px; height: 20px; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px #FFFFFF30; }
+.pbtn[aria-pressed=true] { background: #FFFFFF16; box-shadow: inset 0 0 0 1.5px var(--c1), 0 6px 24px -10px var(--c1); color: #fff; }
+.pmore { display: inline-flex; flex-direction: column; justify-content: center; padding: 4px 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); border: 1px dashed transparent; color: var(--muted); font-size: 14px; font-weight: 550; line-height: 1.2; flex: none; }
+.pmore small { font-size: 11.5px; font-weight: 450; color: var(--dim); }
+.pbtn .free { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #0B1A12; background: #8FE3B5; padding: 1px 7px; border-radius: 99px; }
+.styles { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 12px; }
+.styles .scap { text-align: center; }
+.sgroup { display: inline-flex; padding: 4px; border-radius: 12px; background: #FFFFFF0A; box-shadow: inset 0 0 0 1px var(--line); }
+.sgroup button { border: 0; background: transparent; padding: 7px 16px; border-radius: 9px; cursor: pointer; color: var(--muted); font-size: 14px; font-weight: 550; }
+.sgroup button[aria-pressed=true] { background: color-mix(in srgb, var(--c1) 26%, #FFFFFF10); color: #fff; }
+.scap { color: var(--dim); font-size: 13.5px; min-height: 1.4em; max-width: 520px; }
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.pv { grid-column: span 6; border-radius: var(--radius); background: linear-gradient(#FFFFFF0B, #FFFFFF04); box-shadow: inset 0 0 0 1px var(--line); padding: 16px; display: flex; flex-direction: column; min-width: 0; }
+.pv.w7 { grid-column: span 7; } .pv.w5 { grid-column: span 5; }
+.pv header { display: flex; align-items: baseline; gap: 10px; padding: 2px 4px 12px; flex-wrap: wrap; }
+.pv header b { font-size: 15.5px; font-weight: 650; }
+.pv header span { font-size: 13px; color: var(--dim); }
+.mock { container-type: inline-size; border-radius: 12px; overflow: hidden; position: relative; flex: 1; min-height: 0; box-shadow: 0 0 0 1px #FFFFFF14, 0 24px 50px -24px #000; }
+.mock, .mock * { transition: background-color .6s ease, color .6s ease, border-color .6s ease, fill .6s ease; }
+.info { justify-content: space-between; position: relative; overflow: hidden; padding: 30px; isolation: isolate; }
+.info::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5; background: radial-gradient(80% 70% at 100% 0%, var(--c1), transparent 70%), radial-gradient(70% 60% at 0% 100%, var(--c3), transparent 70%); }
+.info .nm { font-family: var(--display); font-size: clamp(40px, 5vw, 64px); font-weight: 750; letter-spacing: -.04em; line-height: 1; }
+.info .tg { color: #DAD6E6; font-size: 17px; margin: 14px 0 0; max-width: 420px; }
+.info .chips { display: flex; gap: 8px; margin-top: 22px; }
+.info .chips i { width: 34px; height: 34px; border-radius: 10px; box-shadow: inset 0 0 0 1px #FFFFFF2A; }
+.info .foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.badge { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 5px 11px; border-radius: 99px; }
+.badge.free { background: #8FE3B5; color: #0B1A12; }
+.badge.pro { background: #FFFFFF14; box-shadow: inset 0 0 0 1px var(--line2); color: #fff; }
+.note { text-align: center; color: var(--dim); font-size: 13.5px; margin: 22px auto 0; max-width: 760px; }
+.win { font: 400 clamp(5.5px, 1.6cqw, 12.5px)/1.5 var(--font); height: 100%; display: flex; flex-direction: column; min-height: 25em; }
+.win .code { font-family: var(--mono); white-space: pre; }
+.win .ln { display: flex; height: 1.56em; align-items: center; }
+.win .ln .n { width: 3.4em; padding-right: 1.6em; text-align: right; flex: none; }
+.r-plain { color: var(--k-plain); } .r-kw { color: var(--k-kw); font-weight: var(--w-kw, 400); font-style: var(--s-kw, normal); }
+.r-tdecl { color: var(--k-tdecl); font-weight: var(--w-tdecl, 400); } .r-tref { color: var(--k-tref); font-style: var(--s-tref, normal); }
+.r-sys { color: var(--k-sys); } .r-fdecl { color: var(--k-fdecl); font-weight: var(--w-fdecl, 400); font-style: var(--s-fdecl, normal); } .r-fcall { color: var(--k-fcall); }
+.r-fsys { color: var(--k-fsys); font-style: var(--s-fsys, normal); } .r-str { color: var(--k-str); } .r-num { color: var(--k-num); }
+.r-com { color: var(--k-com); font-style: var(--s-com, normal); } .r-todo { color: var(--k-todo); font-style: var(--s-todo, normal); font-weight: var(--w-todo, 400); }
+.r-prop { color: var(--k-prop); font-style: var(--s-prop, normal); } .r-param { color: var(--k-param); } .r-op { color: var(--k-op); } .r-const { color: var(--k-const); font-style: var(--s-const, normal); font-weight: var(--w-const, 400); }
+.caret { display: inline-block; width: .14em; height: 1.2em; vertical-align: -.2em; background: var(--caret); }
+.ico { width: 1.35em; height: 1.35em; display: block; }
+.tl { display: flex; gap: .55em; } .tl i { width: .9em; height: .9em; border-radius: 50%; background: #FF5F57; } .tl i:nth-child(2) { background: #FEBC2E; } .tl i:nth-child(3) { background: #28C840; }
+.tl.mute i { background: #FFFFFF2A; }
+.vs .tb { height: 2.5em; display: flex; align-items: center; justify-content: center; position: relative; font-size: .92em; }
+.vs .tb .tl { position: absolute; left: .9em; }
+.vs .body { flex: 1; display: flex; min-height: 0; }
+.vs .act { width: 3.6em; display: flex; flex-direction: column; align-items: center; gap: 1.25em; padding-top: 1em; flex: none; }
+.vs .act span { position: relative; width: 100%; display: flex; justify-content: center; }
+.vs .act span.on::before { content: ""; position: absolute; left: 0; top: -.3em; bottom: -.3em; width: .16em; background: var(--vs-actb); }
+.vs .exp { width: 14.5em; flex: none; display: flex; flex-direction: column; font-size: .98em; }
+.vs .exp .h { padding: .9em 1.1em .5em; font-size: .82em; font-weight: 600; letter-spacing: .04em; }
+.vs .exp .f { display: flex; align-items: center; gap: .45em; height: 1.75em; padding: 0 .8em 0 2.2em; }
+.vs .exp .f.d { padding-left: 1.1em; }
+.vs .exp .f em { margin-left: auto; font-style: normal; }
+.vs .ed { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.vs .tabs { height: 2.6em; display: flex; flex: none; }
+.vs .tab { display: flex; align-items: center; gap: .45em; padding: 0 1.1em; font-size: .95em; }
+.vs .crumb { height: 1.8em; display: flex; align-items: center; padding: 0 1.3em; font-size: .9em; flex: none; }
+.vs .codearea { flex: 1; padding-top: .4em; overflow: hidden; }
+.vs .panel { height: 7.8em; flex: none; padding: .55em 1.3em; font-family: var(--mono); font-size: .95em; overflow: hidden; }
+.vs .panel .pt { display: flex; gap: 1.4em; font-family: var(--font); font-size: .82em; font-weight: 500; margin-bottom: .55em; }
+.vs .sb { height: 1.8em; display: flex; align-items: center; gap: 1.1em; font-size: .86em; flex: none; padding-right: 1em; }
+.vs .sb .rm { height: 100%; display: flex; align-items: center; padding: 0 .75em; }
+.vs .sb .sp { margin-left: auto; }
+.xc .tb { height: 3em; display: flex; align-items: center; gap: 1.2em; padding: 0 1.1em; background: #2A2A2C; color: #D8D8DA; font-size: .92em; flex: none; }
+.xc .tb .mid { margin: 0 auto; opacity: .75; background: #FFFFFF0E; padding: .25em 2.2em; border-radius: .45em; }
+.xc .body { flex: 1; display: flex; min-height: 0; }
+.xc .xnav { width: 13.5em; background: #262628; color: #D8D8DA; padding: .8em .5em; flex: none; font-size: .96em; }
+.xc .xnav div { display: flex; align-items: center; gap: .5em; padding: .26em .6em; border-radius: .4em; }
+.xc .xnav div.on { background: #2F6FED; color: #fff; }
+.xc .xnav .ind { padding-left: 1.7em; }
+.xc .ed { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.xc .ftab { height: 2.2em; display: flex; align-items: center; gap: .45em; padding: 0 1em; background: #2A2A2C; color: #D8D8DA; font-size: .9em; border-top: 1px solid #00000055; flex: none; }
+.xc .codearea { flex: 1; padding-top: .5em; overflow: hidden; }
+.xc .cons { height: 5.4em; flex: none; padding: .7em 1em; font-family: var(--mono); font-size: .95em; border-top: 1px solid #00000066; }
+.xc .sel { background: var(--xc-sel); }
+.jb .tb { height: 2.9em; display: flex; align-items: center; gap: 1em; padding: 0 1em; flex: none; font-size: .95em; }
+.jb .tb .sp { margin-left: auto; }
+.jb .body { flex: 1; display: flex; min-height: 0; }
+.jb .stripe { width: 3em; flex: none; display: flex; flex-direction: column; align-items: center; gap: 1.3em; padding-top: 1em; }
+.jb .tree { width: 13em; flex: none; padding: .7em .4em; font-size: .96em; }
+.jb .tree div { padding: .24em .6em; border-radius: .35em; }
+.jb .tree .h { font-weight: 650; padding-bottom: .5em; }
+.jb .ed { flex: 1; min-width: 0; display: flex; flex-direction: column; position: relative; }
+.jb .tabs { height: 2.5em; display: flex; flex: none; }
+.jb .tab { display: flex; align-items: center; padding: 0 1.1em; font-size: .94em; position: relative; }
+.jb .tab.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: .2em; background: var(--jb-ul); }
+.jb .codearea { flex: 1; padding-top: .5em; overflow: hidden; }
+.jb .pop { position: absolute; left: 8.4em; top: 8em; width: 12em; border-radius: .4em; padding: .3em; font-family: var(--mono); font-size: .93em; box-shadow: 0 .6em 1.6em #00000080; }
+.jb .pop div { padding: .15em .5em; border-radius: .25em; }
+.jb .sb { height: 1.9em; display: flex; align-items: center; gap: 1.2em; padding: 0 1em; font-size: .86em; flex: none; }
+.jb .sb .sp { margin-left: auto; }
+.jb .ul { text-decoration: underline wavy; text-decoration-color: var(--jb-warn); text-underline-offset: .2em; }
+.tm .tb { height: 2.6em; display: flex; align-items: center; justify-content: center; position: relative; font-size: .92em; flex: none; }
+.tm .tb .tl { position: absolute; left: .95em; }
+.tm .screen { flex: 1; padding: 1em 1.3em; font-family: var(--mono); font-size: 1.02em; overflow: hidden; }
+.tm .screen div { white-space: pre; line-height: 1.52; }
+.tm b { font-weight: 700; }
+.cc { background: #1A1A1A; color: #ECECEC; --app: #1A1A1A; --ov: linear-gradient(#2B2B2BBF, #2B2B2BBF); font-size: clamp(7px, 2.35cqw, 13.5px); }
+.cc .tb { height: 2.7em; display: flex; align-items: center; gap: .8em; padding: 0 1.1em; border-bottom: 1px solid #FFFFFF10; color: #9A9A9A; font-size: .92em; flex: none; }
+.cc .tb b { color: #ECECEC; font-weight: 600; }
+.cc .tb .chip2 { background: #FFFFFF14; color: #ECECEC; padding: .1em .7em; border-radius: .45em; }
+.cc .chat { flex: 1; padding: 1.1em 1.3em; overflow: hidden; line-height: 1.45; display: flex; flex-direction: column; }
+.cc .input { margin-top: auto; border-radius: .9em; background: #262626; box-shadow: inset 0 0 0 1px #FFFFFF14; padding: .8em 1em .6em; color: #8A8A8A; }
+.cc .input div { display: flex; gap: .5em; margin-top: .7em; font-size: .85em; }
+.cc .input span { background: #FFFFFF10; padding: .15em .6em; border-radius: .4em; color: #BDBDBD; }
+.cc .input i { margin-left: auto; width: 1.7em; height: 1.7em; border-radius: 50%; display: grid; place-items: center; font-style: normal; color: #fff; }
+.cc .row { margin: 0 0 .95em; }
+.cc .lbl { display: flex; align-items: center; gap: .45em; height: 1.35em; margin-bottom: .45em; font-size: .82em; font-weight: 700; letter-spacing: .08em; }
+.cc .lbl .time { font-weight: 500; letter-spacing: 0; font-size: .92em; }
+.cc .u .lbl { justify-content: flex-end; }
+.cc .ububble { margin-left: auto; max-width: 85%; width: fit-content; padding: .8em 1.1em; border-radius: .85em; background: var(--ov), var(--app); }
+.cc .cbubble { padding: .75em 1em; border-radius: .85em; }
+.cc .chipl { padding: .05em .5em; border-radius: .45em; line-height: 1.3; }
+.cc .av { width: 1.3em; height: 1.3em; flex: none; display: inline-grid; place-items: center; font-size: 1.25em; line-height: 1; font-weight: 400; }
+.cc .tool { display: flex; align-items: center; gap: .55em; font-size: .95em; color: #9A9A9A; padding: .25em .45em; margin: 0 -.45em .85em; border-radius: .55em; }
+.cc .tile { width: 1.3em; height: 1.3em; border-radius: .35em; display: grid; place-items: center; flex: none; }
+.cc .diff { display: inline-flex; gap: .15em; margin-left: .3em; } .cc .diff i { width: .5em; height: .5em; border-radius: .14em; display: inline-block; }
+.cc .h { font-weight: 700; font-size: 1.42em; line-height: 1.3; margin: .1em 0 .65em; display: inline-block; }
+.cc .codew { border-radius: .7em; overflow: hidden; margin-bottom: .85em; font: .9em/1.45 var(--mono); }
+.cc .codew .head { display: flex; align-items: center; gap: .45em; padding: .45em .75em; font-size: .85em; }
+.cc .codew .dot { width: .6em; height: .6em; border-radius: 50%; display: inline-block; }
+.cc .codew .lang { margin-left: .4em; padding: 0 .45em; border-radius: .35em; font-size: .8em; letter-spacing: .1em; }
+.cc .codew .file { opacity: .75; margin-left: .3em; }
+.cc .codew pre { margin: 0; padding: .65em .9em; background: #121212; color: #ECECEC; font: inherit; }
+.cc .k { color: #C792EA } .cc .s { color: #C3E88D } .cc .f { color: #82AAFF } .cc .c { color: #7A7A7A }
+.cc .spin { display: flex; align-items: center; gap: .6em; font-size: .93em; color: #9A9A9A; }
+.cc .spin svg { flex: none; width: 6.8em; height: 1.4em; }
+.cc .mono { font-family: var(--mono) !important; }
+.cursor { animation: blink 1s steps(1) infinite; } @keyframes blink { 50% { opacity: 0 } }
+@keyframes drift { from { background-position: 0% 50% } to { background-position: 200% 50% } }
+@keyframes flicker { 0%, 19%, 21%, 23%, 80%, 100% { opacity: 1 } 20%, 22% { opacity: .35 } 81% { opacity: .7 } }
+@keyframes sheen { 0% { background-position: -150% 0 } 60%, 100% { background-position: 250% 0 } }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: s; }
+.step { border-radius: var(--radius); background: linear-gradient(#FFFFFF0A, #FFFFFF03); box-shadow: inset 0 0 0 1px var(--line); padding: 28px; position: relative; overflow: hidden; }
+.step .num { font: 600 13px var(--mono); color: var(--c1); letter-spacing: .1em; }
+.step h3 { font-size: 26px; letter-spacing: -.025em; margin: 10px 0 10px; }
+.step p { color: var(--muted); margin: 0; font-size: 15.5px; }
+.step .vis { margin-top: 24px; min-height: 150px; border-radius: 14px; background: #0B0B10; box-shadow: inset 0 0 0 1px var(--line); padding: 16px; font-size: 13.5px; }
+.mini-pals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.mini-pals i { aspect-ratio: 1.4; border-radius: 9px; box-shadow: inset 0 0 0 1px #FFFFFF22; }
+.mini-pals i.on { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--c1); }
+.linkrow { display: flex; align-items: center; gap: 10px; padding: 8px 4px; border-bottom: 1px solid var(--line); }
+.linkrow:last-child { border-bottom: 0; }
+.linkrow .ok { margin-left: auto; font-size: 12px; font-weight: 650; color: #8FE3B5; display: inline-flex; gap: 5px; align-items: center; }
+.linkrow .ok::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #8FE3B5; box-shadow: 0 0 8px #8FE3B5; }
+.linkrow code { color: var(--dim); font: 12px var(--mono); }
+.applybtn { display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 12px; font-weight: 650; color: #fff; background: linear-gradient(100deg, var(--c1), var(--c2)); box-shadow: 0 10px 30px -12px var(--c1); }
+.ticks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.ticks span { font-size: 12.5px; padding: 4px 10px; border-radius: 99px; background: #FFFFFF0C; color: #DAD6E6; }
+.ticks span::before { content: "✓ "; color: var(--c1); font-weight: 700; }
+.tour-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.tour-tabs button { border: 0; cursor: pointer; padding: 9px 16px; border-radius: 999px; background: #FFFFFF08; box-shadow: inset 0 0 0 1px var(--line); color: var(--muted); font-size: 14.5px; font-weight: 550; display: inline-flex; gap: 8px; align-items: center; }
+.tour-tabs button i { width: 12px; height: 12px; border-radius: 50%; }
+.tour-tabs button[aria-pressed=true] { color: #fff; background: #FFFFFF14; box-shadow: inset 0 0 0 1.5px var(--line2); }
+.tour .stage { margin-top: 0; }
+.tour .aw-main { display: grid; }
+.tour .aw-main picture { grid-area: 1 / 1; display: block; width: 100%; opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
+.tour .aw-main picture.on { opacity: 1; visibility: visible; transition: opacity .6s ease; }
+.tour .aw-main img { width: 100%; height: auto; aspect-ratio: 2390 / 1800; }
+.feats3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 56px; }
+.feats3 div { padding: 0 8px; }
+.feats3 b { display: block; font-size: 17px; margin-bottom: 6px; }
+.feats3 p { margin: 0; color: var(--muted); font-size: 15px; }
+.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.feat { border-radius: var(--radius); background: linear-gradient(#FFFFFF0A, #FFFFFF03); box-shadow: inset 0 0 0 1px var(--line); padding: 28px; }
+.feat .ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--c1) 18%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c1) 40%, transparent); color: color-mix(in srgb, var(--c1) 75%, #fff); margin-bottom: 18px; }
+.feat .ic svg { width: 22px; height: 22px; }
+.feat h3 { font-size: 21px; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 8px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.feat p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.tag-pro { font: 700 11px var(--font); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 99px; color: #fff; background: linear-gradient(100deg, var(--c1), var(--c2)); }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 980px; margin: 0 auto; }
+.plan { border-radius: 26px; padding: 36px; background: linear-gradient(#FFFFFF0B, #FFFFFF03); box-shadow: inset 0 0 0 1px var(--line); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.plan.pro { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--c1) 55%, transparent), 0 30px 80px -40px var(--c1); }
+.plan.pro::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .28; background: radial-gradient(70% 60% at 100% 0%, var(--c1), transparent 70%), radial-gradient(60% 50% at 0% 100%, var(--c2), transparent 70%); }
+.plan { isolation: isolate; }
+.plan .pn { font-size: 15px; font-weight: 650; color: var(--muted); }
+.plan .pp { font-family: var(--display); font-size: 46px; font-weight: 750; letter-spacing: -.04em; margin: 8px 0 4px; line-height: 1.05; }
+.plan .ps { color: var(--muted); margin: 0 0 22px; }
+.plan ul { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 11px; }
+.plan li { display: flex; gap: 11px; align-items: flex-start; }
+.plan li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; background: color-mix(in srgb, var(--c1) 22%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c1) 55%, transparent); }
+.plan li.sal::before { background: #8FE3B5; box-shadow: none; }
+.plan .btn { margin-top: auto; align-self: flex-start; }
+.plan .fine { margin-top: 14px; font-size: 13px; color: var(--dim); }
+.faq { max-width: 820px; margin: 0 auto; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; font-size: 18px; font-weight: 600; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-70%) rotate(45deg); transition: transform .25s; }
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.faq details p { margin: 0 0 22px; color: var(--muted); font-size: 16px; }
+.faq .more { text-align: center; margin-top: 28px; color: var(--muted); }
+.faq .more a { color: var(--fg); }
+.final { margin: 140px auto 0; text-align: center; padding: 90px 24px; border-radius: 34px; position: relative; overflow: hidden; isolation: isolate; box-shadow: inset 0 0 0 1px var(--line2); }
+.final::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(60% 90% at 20% 0%, var(--c1), transparent 70%), radial-gradient(60% 90% at 85% 100%, var(--c2), transparent 70%), radial-gradient(50% 70% at 60% 30%, var(--c3), transparent 70%), #0B0B12; opacity: .62; }
+.final img { width: 96px; height: 96px; margin: 0 auto 26px; border-radius: 22px; box-shadow: 0 20px 50px -15px #000; }
+.final h2 { font-size: clamp(36px, 6vw, 68px); }
+.final p { color: #E4E0EE; font-size: 19px; margin: 18px auto 34px; max-width: 560px; }
+footer.site { margin-top: 100px; border-top: 1px solid var(--line); padding: 44px 0 56px; color: var(--dim); font-size: 13.5px; }
+footer.site .top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; margin-bottom: 26px; }
+footer.site .top nav { display: flex; gap: 22px; flex-wrap: wrap; }
+footer.site a { color: var(--muted); text-decoration: none; }
+footer.site a:hover { color: var(--fg); }
+footer.site .legal { max-width: 900px; line-height: 1.6; }
+footer.site .copy { margin-top: 14px; color: var(--muted); }
+.doc { max-width: 780px; margin: 0 auto; padding: 72px 0 0; }
+.doc h1 { font-size: clamp(40px, 7vw, 64px); margin: 0 0 12px; }
+.doc h2 { font-size: 24px; letter-spacing: -.02em; line-height: 1.25; margin: 44px 0 10px; }
+.doc p, .doc li { color: #CFCBDA; }
+.doc .lead { margin: 18px 0 8px; text-align: left; max-width: none; }
+.doc .lead a, .doc p a, .doc li a { color: color-mix(in srgb, var(--c1) 65%, #fff); }
+.doc ul { padding-left: 22px; } .doc li { margin: 7px 0; }
+.doc .fine { color: var(--dim); font-size: 14px; }
+.doc .meta { display: block; text-align: left; color: var(--dim); font-size: 14px; margin: 8px 0 28px; }
+.doc .meta span::before { display: none; }
+.doc details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+.doc summary { cursor: pointer; font-weight: 600; padding: 14px 0; color: var(--fg); }
+.doc details p { margin-top: 0; }
+.doc-hero { position: relative; isolation: isolate; }
+.doc-hero .aura { height: 620px; }
+.doc-hero .aura i { opacity: .32; }
+[data-lang] { display: none; }
+html[lang=en] [data-lang=en], html[lang=it] [data-lang=it] { display: block; }
+html[lang=en] span[data-lang=en], html[lang=it] span[data-lang=it] { display: inline; }
+.js .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
+.js .rv.in { opacity: 1; transform: none; }
+@media (max-width: 1000px) {
+.pv, .pv.w7, .pv.w5 { grid-column: span 12; }
+.steps, .feats, .feats3 { grid-template-columns: 1fr; }
+.nav .links a.hide-s { display: none; }
+}
+@media (max-width: 760px) {
+.plans { grid-template-columns: 1fr; }
+.hero { padding-top: 56px; }
+section.block { padding-top: 88px; }
+.controls { position: static; }
+.palettes { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding: 2px 2px 8px; scrollbar-width: none; margin: 0 -20px; padding-inline: 20px; }
+.palettes::-webkit-scrollbar { display: none; }
+.pbtn { flex: none; }
+.vs .exp, .jb .tree, .xc .xnav { display: none; }
+.win { font-size: clamp(6px, 2.3cqw, 12px); }
+.cc { font-size: clamp(8px, 3.5cqw, 13px); }
+.plan { padding: 28px; }
+.final { padding: 64px 20px; border-radius: 26px; }
+.nav .links { gap: 14px; }
+.nav .links a.hide-xs { display: none; }
+.brand small { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+.rv { opacity: 1; transform: none; }
+.hero .appwin { transform: none; }
+.marquee ul { width: auto; flex-wrap: wrap; justify-content: center; }
+.marquee ul li[aria-hidden] { display: none; }
+.marquee { mask-image: none; -webkit-mask-image: none; }
+}</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <img src="icon.png" alt="">
-  <a class="brand" href="index.html">Tinta – Code Themes</a>
-  <nav>
-    <a href="index.html" aria-current="page"><span data-lang="en">Home</span><span data-lang="it">Home</span></a>
-    <a href="support.html"><span data-lang="en">Support</span><span data-lang="it">Supporto</span></a>
-    <a href="privacy.html">Privacy</a>
-    <span class="lang" role="group" aria-label="Language / Lingua"><button type="button" data-set="en">EN</button><button type="button" data-set="it">IT</button></span>
-  </nav>
-</header>
-<main>
+<a class="sr" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><img src="img/icon-64.png" width="30" height="30" alt="">Tinta <small>Code Themes</small></a>
+  <nav class="links" aria-label="Main"><a href="#live" class="hide-xs">Previews</a><a href="#how" class="hide-s">How it works</a><a href="#pricing" class="hide-xs">Pricing</a><a href="#faq" class="hide-s">FAQ</a><a href="support.html" class="hide-s">Support</a></nav>
+  <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6830685209">Get Tinta</a>
+</div></header>
+<main id="main">
 
-<section data-lang="en">
-  <h1>One theme, <span class="grad">all your editors</span>.</h1>
-  <p class="lead">Tinta is a Mac app that gives your code editors and terminals the same look. Pick a palette and a style, tweak any color, apply it in one click – and undo it just as easily.</p>
-  <p><a class="btn" href="https://apps.apple.com/app/id6830685209">Download on the Mac App Store</a></p>
-  <div class="pal"><span>Tinta</span><span>Aurora</span><span>Vetro</span><span>Noir</span><span>Neon</span><span>Salvia</span><span>Avorio</span><span>Fosforo</span><span>Terracotta</span><span>Unicorno</span><span>Root</span></div>
-  <div class="card"><strong>Palettes and styles for every mood, with more on the way.</strong> Minimal, Outline, Solid and Gradients, with live previews of code, chat and terminal before anything is applied.</div>
-  <div class="card"><strong>One theme, everywhere you code:</strong> Visual Studio Code, Cursor, Windsurf, VSCodium, Kiro, Antigravity, Trae, JetBrains IDEs, Xcode, Zed, the Claude desktop app&rsquo;s Code tab and Claude Code (via the free, open-source Tinta plugin), Terminal, iTerm2, Ghostty, Warp and the zsh prompt.</div>
-  <div class="card"><strong>Free to start.</strong> The complete Salvia palette, in every style, is free. <strong>Tinta Pro</strong> is one in-app purchase, once: every palette and style, future palettes, sounds, effects and your own custom themes. Updates included, no subscription.</div>
-  <div class="card"><strong>Safe and private.</strong> Tinta writes only theme and settings files, in folders you choose, keeps a copy before changing a setting and restores everything when you unlink. No account, no tracking; only anonymous usage statistics, which you can turn off.</div>
+<section class="hero">
+  <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-copy">
+    <div class="eyebrow"><span class="dots"><i style="background:#A970FF"></i><i style="background:#3EE6C1"></i><i style="background:#FF4FD8"></i><i style="background:#7FCFA8"></i></span>A Mac app for everyone who writes code</div>
+    <h1>One theme.<br><span class="l2">Everywhere you code.</span></h1>
+    <p class="lead">Tinta gives your editors, IDEs and terminals <b>one coordinated color theme</b>. Pick a palette, pick a style, click Apply, and VS&nbsp;Code, JetBrains IDEs, Xcode, Zed, Claude&nbsp;Code and your terminal change together. Undo is just as easy.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6830685209"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download on the Mac App Store</a>
+      <a class="btn btn-ghost" href="#live">Try the palettes live</a>
+    </div>
+    <div class="meta"><span>Free to start</span><span>No account</span><span>No subscription</span><span>macOS 14 Sonoma or later</span></div>
+  </div>
+  <div class="stage">
+    <div class="appwin">
+      <aside class="aw-side" aria-hidden="true">
+  <div class="lights"><i></i><i></i><i></i></div>
+  <div class="aw-brand"><img src="img/icon-64.png" alt="" width="32" height="32"><span><b>Tinta</b><small>Code Themes</small></span></div>
+  <div class="aw-sec">Themes</div>
+  <div class="aw-item on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Gallery</div>
+  <div class="aw-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 4.5 19.5 9.5 11 18l-5-5zM6 13l-2.5 2.5c-1 1-.5 4.5-.5 4.5s3.5.5 4.5-.5L10 17"/></svg>My Themes<em>2</em></div>
+  <div class="aw-sec">Editors</div>
+  <div class="aw-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Linked Editors<em>6/9</em></div>
+  <div class="aw-sec">Purchases</div>
+  <div class="aw-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>Store</div>
+  <div class="aw-inuse"><div class="mesh"></div><div class="row">Tinta · Gradient<span class="pill">In use</span></div><p>VS Code, Xcode, iTerm2 and Zed</p></div>
+</aside>
+      <div class="aw-main">
+        <div class="aw-bar" aria-hidden="true"><span class="title">Gallery</span><span class="seg"><span><i></i>Minimal</span><span><i></i>Outline</span><span><i></i>Solid</span><span class="on"><i></i>Gradient</span></span></div>
+        <picture><source type="image/avif" srcset="img/gallery-1204.avif 1204w, img/gallery-1800.avif 1800w, img/gallery-2408.avif 2408w" sizes="(max-width: 760px) 100vw, 1040px"><source type="image/webp" srcset="img/gallery-1204.webp 1204w, img/gallery-1800.webp 1800w, img/gallery-2408.webp 2408w" sizes="(max-width: 760px) 100vw, 1040px"><img src="img/gallery.png" width="1204" height="820" alt="The Tinta gallery: every palette as a live VS Code preview, with the palette in use marked" fetchpriority="high" decoding="async"></picture>
+      </div>
+    </div>
+  </div>
 </section>
-<section data-lang="it">
-  <h1>Un tema, <span class="grad">tutti i tuoi editor</span>.</h1>
-  <p class="lead">Tinta e&grave; un'app per Mac che da&grave; lo stesso aspetto a editor di codice e terminali. Scegli palette e stile, ritocca ogni colore, applica con un clic, e con un clic torni indietro.</p>
-  <p><a class="btn" href="https://apps.apple.com/app/id6830685209">Scarica dal Mac App Store</a></p>
-  <div class="pal"><span>Tinta</span><span>Aurora</span><span>Vetro</span><span>Noir</span><span>Neon</span><span>Salvia</span><span>Avorio</span><span>Fosforo</span><span>Terracotta</span><span>Unicorno</span><span>Root</span></div>
-  <div class="card"><strong>Palette e stili per ogni gusto, e altri in arrivo.</strong> Minimal, Outline, Solid e Sfumature, con anteprime dal vivo di codice, chat e terminale prima di applicare qualsiasi cosa.</div>
-  <div class="card"><strong>Un tema, ovunque scrivi codice:</strong> Visual Studio Code, Cursor, Windsurf, VSCodium, Kiro, Antigravity, Trae, gli IDE JetBrains, Xcode, Zed, la scheda Code dell'app desktop Claude e Claude Code (tramite il plugin Tinta, gratuito e open source), Terminale, iTerm2, Ghostty, Warp e il prompt di zsh.</div>
-  <div class="card"><strong>Gratis per iniziare.</strong> La palette Salvia completa, in tutti gli stili, &egrave; gratis. <strong>Tinta Pro</strong> &egrave; un solo acquisto in-app, una volta: ogni palette e stile, le palette future, suoni, effetti e i tuoi temi personalizzati. Aggiornamenti inclusi, nessun abbonamento.</div>
-  <div class="card"><strong>Sicura e riservata.</strong> Tinta scrive solo file di tema e di impostazioni, nelle cartelle che scegli tu, conserva una copia prima di cambiare un'impostazione e ripristina tutto quando scolleghi. Nessun account, nessun tracciamento; solo statistiche d'uso anonime, che puoi spegnere.</div>
+
+<section class="works" aria-label="Works with">
+  <p>Works with</p>
+  <div class="marquee"><ul><li class="k">Visual Studio Code</li><li>Cursor</li><li>Windsurf</li><li>VSCodium</li><li>Kiro</li><li>Antigravity</li><li>Trae</li><li class="k">IntelliJ IDEA</li><li>PyCharm</li><li>WebStorm</li><li>GoLand</li><li>PhpStorm</li><li>RubyMine</li><li>CLion</li><li>Rider</li><li>DataGrip</li><li>RustRover</li><li>Android Studio</li><li class="k">Xcode</li><li class="k">Zed</li><li class="k">Claude Code</li><li>Claude desktop · Code tab</li><li class="k">Terminal</li><li class="k">iTerm2</li><li class="k">Ghostty</li><li>Warp</li><li>zsh</li><li>Starship</li><li class="k" aria-hidden="true">Visual Studio Code</li><li aria-hidden="true">Cursor</li><li aria-hidden="true">Windsurf</li><li aria-hidden="true">VSCodium</li><li aria-hidden="true">Kiro</li><li aria-hidden="true">Antigravity</li><li aria-hidden="true">Trae</li><li class="k" aria-hidden="true">IntelliJ IDEA</li><li aria-hidden="true">PyCharm</li><li aria-hidden="true">WebStorm</li><li aria-hidden="true">GoLand</li><li aria-hidden="true">PhpStorm</li><li aria-hidden="true">RubyMine</li><li aria-hidden="true">CLion</li><li aria-hidden="true">Rider</li><li aria-hidden="true">DataGrip</li><li aria-hidden="true">RustRover</li><li aria-hidden="true">Android Studio</li><li class="k" aria-hidden="true">Xcode</li><li class="k" aria-hidden="true">Zed</li><li class="k" aria-hidden="true">Claude Code</li><li aria-hidden="true">Claude desktop · Code tab</li><li class="k" aria-hidden="true">Terminal</li><li class="k" aria-hidden="true">iTerm2</li><li class="k" aria-hidden="true">Ghostty</li><li aria-hidden="true">Warp</li><li aria-hidden="true">zsh</li><li aria-hidden="true">Starship</li></ul></div>
 </section>
+
+<section class="block" id="live">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="kicker">Live preview</span>
+      <h2>Pick a palette.<br><span class="grad">Watch everything follow.</span></h2>
+      <p>These windows are drawn right here, in your browser, from the exact colors Tinta writes into each editor. Try a few themes from the gallery and a style, and see them everywhere at once.</p>
+    </div>
+    <div class="controls">
+      <div class="palettes" id="pals" role="group" aria-label="Example themes from the gallery"></div>
+      <div class="styles"><div class="sgroup" id="styles" role="group" aria-label="Style"></div><span class="scap" id="scap" aria-live="polite"></span></div>
+    </div>
+    <div class="bento">
+      <article class="pv w7"><header><b>VS Code</b><span>and Cursor, Windsurf, VSCodium, Kiro, Antigravity, Trae</span></header><div class="mock" id="m-vs" role="img" aria-label="VS Code window in the selected palette and style"></div></article>
+      <article class="pv w5"><header><b>Claude Code</b><span>Code tab of the desktop app, and the terminal</span></header><div class="mock" id="m-cc" role="img" aria-label="Claude Code tab in the selected palette and style"></div></article>
+      <article class="pv"><header><b>JetBrains IDEs</b><span>IntelliJ IDEA, PyCharm, WebStorm and more, with the free plugin</span></header><div class="mock" id="m-jb" role="img" aria-label="JetBrains IDE window in the selected palette and style"></div></article>
+      <article class="pv"><header><b>Xcode</b><span>a real color theme in Settings › Themes</span></header><div class="mock" id="m-xc" role="img" aria-label="Xcode window in the selected palette and style"></div></article>
+      <article class="pv w7"><header><b>Terminal</b><span>Terminal, iTerm2, Ghostty, Warp, Zed and the zsh prompt</span></header><div class="mock" id="m-tm" role="img" aria-label="Terminal window in the selected palette and style"></div></article>
+      <article class="pv w5 info" aria-live="polite">
+        <div>
+          <div class="nm" id="pi-name">Tinta</div>
+          <p class="tg" id="pi-tag"></p>
+          <div class="chips" id="pi-chips"></div>
+        </div>
+        <div class="foot"><span class="badge pro" id="pi-badge">Tinta Pro</span><span class="scap" id="pi-note"></span></div>
+      </article>
+    </div>
+    <p class="note">A few examples from a growing gallery. Previews are simplified: in the app every editor gets its full theme, and each palette brings its own signature effect to the Claude Code tab.</p>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="kicker">One click</span>
+      <h2>Link once. <span class="grad">Apply anywhere.</span></h2>
+      <p>No config files to copy, no extensions to hunt for, no settings to remember in five different apps.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="num">01</span><h3>Choose</h3><p>Browse palettes and styles with live previews of your editors, the Claude Code tab and the terminal, before anything changes.</p>
+        <div class="vis"><div class="mini-pals">
+          <i style="background:linear-gradient(135deg,#A970FF,#F0508F)" class="on"></i><i style="background:linear-gradient(135deg,#3EE6C1,#8C7BFF)"></i><i style="background:linear-gradient(135deg,#7DB7FF,#B9A6FF)"></i><i style="background:linear-gradient(135deg,#2A2A2E,#FF5A3C)"></i>
+          <i style="background:linear-gradient(135deg,#00E5FF,#FF4FD8)"></i><i style="background:linear-gradient(135deg,#4FC6A0,#C9E7C8)"></i><i style="background:linear-gradient(135deg,#E9D8B4,#B98E58)"></i><i style="background:linear-gradient(135deg,#39FF8B,#0E3B22)"></i>
+        </div></div></div>
+      <div class="step rv"><span class="num">02</span><h3>Link once</h3><p>macOS asks you to choose each editor's folder, one time. Tinta writes only theme and settings files there, and keeps a copy first.</p>
+        <div class="vis">
+          <div class="linkrow"><b>VS Code</b><code>~/Library/…/Code/User</code><span class="ok">Linked</span></div>
+          <div class="linkrow"><b>IntelliJ IDEA</b><code>~/Library/…/JetBrains</code><span class="ok">Linked</span></div>
+          <div class="linkrow"><b>Xcode</b><code>…/FontAndColorThemes</code><span class="ok">Linked</span></div>
+          <div class="linkrow"><b>Ghostty</b><code>~/.config/ghostty</code><span class="ok">Linked</span></div>
+        </div></div>
+      <div class="step rv"><span class="num">03</span><h3>Apply</h3><p>One click recolors every linked editor together, or give each one its own variant of the same palette. Unlink puts everything back.</p>
+        <div class="vis"><div class="applybtn">Apply to all linked editors</div><div class="ticks"><span>VS Code</span><span>Cursor</span><span>IntelliJ IDEA</span><span>Xcode</span><span>Zed</span><span>Claude Code</span><span>iTerm2</span><span>zsh</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block tour" id="app">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="kicker">Inside Tinta</span>
+      <h2>The gallery, <span class="grad">up close.</span></h2>
+      <p>Every theme in the gallery has its own page: switch the preview between editors, compare styles, hear its sounds, then link and apply. These are real screens from the app.</p>
+    </div>
+    <div class="tour-tabs" id="tour-tabs" role="group" aria-label="Screens"><button type="button" data-k="tinta-vscode" aria-pressed="true"><i style="background:#A970FF"></i>VS Code</button><button type="button" data-k="neon-xcode" aria-pressed="false"><i style="background:#00E5FF"></i>Xcode</button><button type="button" data-k="fosforo-intellij" aria-pressed="false"><i style="background:#39FF8B"></i>IntelliJ IDEA</button><button type="button" data-k="salvia-terminal" aria-pressed="false"><i style="background:#7FCFA8"></i>Terminal</button></div>
+  </div>
+  <div class="stage rv" id="tour">
+    <div class="appwin">
+      <aside class="aw-side" aria-hidden="true">
+  <div class="lights"><i></i><i></i><i></i></div>
+  <div class="aw-brand"><img src="img/icon-64.png" alt="" width="32" height="32"><span><b>Tinta</b><small>Code Themes</small></span></div>
+  <div class="aw-sec">Themes</div>
+  <div class="aw-item on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Gallery</div>
+  <div class="aw-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 4.5 19.5 9.5 11 18l-5-5zM6 13l-2.5 2.5c-1 1-.5 4.5-.5 4.5s3.5.5 4.5-.5L10 17"/></svg>My Themes<em>2</em></div>
+  <div class="aw-sec">Editors</div>
+  <div class="aw-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Linked Editors<em>6/9</em></div>
+  <div class="aw-sec">Purchases</div>
+  <div class="aw-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>Store</div>
+  <div class="aw-inuse"><div class="mesh"></div><div class="row">Tinta · Gradient<span class="pill">In use</span></div><p>VS Code, Xcode, iTerm2 and Zed</p></div>
+</aside>
+      <div class="aw-main"><picture data-k="tinta-vscode" class="on"><source type="image/avif" srcset="img/page-tinta-vscode-1195.avif 1195w, img/page-tinta-vscode-1800.avif 1800w, img/page-tinta-vscode-2390.avif 2390w" sizes="(max-width: 760px) 100vw, 1030px"><source type="image/webp" srcset="img/page-tinta-vscode-1195.webp 1195w, img/page-tinta-vscode-1800.webp 1800w, img/page-tinta-vscode-2390.webp 2390w" sizes="(max-width: 760px) 100vw, 1030px"><img src="img/page-tinta-vscode.png" width="1195" height="900" alt="A palette&#x27;s page in Tinta with the VS Code preview" decoding="async"></picture><picture data-k="neon-xcode"><source type="image/avif" srcset="img/page-neon-xcode-1195.avif 1195w, img/page-neon-xcode-1800.avif 1800w, img/page-neon-xcode-2390.avif 2390w" sizes="(max-width: 760px) 100vw, 1030px"><source type="image/webp" srcset="img/page-neon-xcode-1195.webp 1195w, img/page-neon-xcode-1800.webp 1800w, img/page-neon-xcode-2390.webp 2390w" sizes="(max-width: 760px) 100vw, 1030px"><img src="img/page-neon-xcode.png" width="1195" height="900" alt="A palette&#x27;s page in Tinta with the Xcode preview" loading="lazy" decoding="async"></picture><picture data-k="fosforo-intellij"><source type="image/avif" srcset="img/page-fosforo-intellij-1195.avif 1195w, img/page-fosforo-intellij-1800.avif 1800w, img/page-fosforo-intellij-2390.avif 2390w" sizes="(max-width: 760px) 100vw, 1030px"><source type="image/webp" srcset="img/page-fosforo-intellij-1195.webp 1195w, img/page-fosforo-intellij-1800.webp 1800w, img/page-fosforo-intellij-2390.webp 2390w" sizes="(max-width: 760px) 100vw, 1030px"><img src="img/page-fosforo-intellij.png" width="1195" height="900" alt="A palette&#x27;s page in Tinta with the IntelliJ IDEA preview" loading="lazy" decoding="async"></picture><picture data-k="salvia-terminal"><source type="image/avif" srcset="img/page-salvia-terminal-1195.avif 1195w, img/page-salvia-terminal-1800.avif 1800w, img/page-salvia-terminal-2390.avif 2390w" sizes="(max-width: 760px) 100vw, 1030px"><source type="image/webp" srcset="img/page-salvia-terminal-1195.webp 1195w, img/page-salvia-terminal-1800.webp 1800w, img/page-salvia-terminal-2390.webp 2390w" sizes="(max-width: 760px) 100vw, 1030px"><img src="img/page-salvia-terminal.png" width="1195" height="900" alt="A palette&#x27;s page in Tinta with the Terminal preview" loading="lazy" decoding="async"></picture></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="feats3">
+      <div class="rv"><b>Previews you can trust</b><p>The previews use the same colors Tinta writes to disk, so what you see is what your editor gets.</p></div>
+      <div class="rv"><b>Styles for every taste</b><p>From Minimal, color on text only, to Gradient, with shaded fills and each palette's signature effect.</p></div>
+      <div class="rv"><b>A growing gallery</b><p>New themes are added regularly, and Tinta Pro includes every one of them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="kicker">Thoughtfully built</span>
+      <h2>Colors only. <span class="grad">Nothing else.</span></h2>
+    </div>
+    <div class="feats">
+      <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Safe by design</h3><p>Nothing changes until you link a tool. Tinta writes only theme and settings files, keeps a copy before changing one, and Unlink restores your previous setup.</p></div>
+      <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 9 6 9 6a16 16 0 0 1-2.6 3.2M6.5 7.6A15.6 15.6 0 0 0 3 12s4 6 9 6a8.7 8.7 0 0 0 4.4-1.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></div><h3>Private</h3><p>No account, no ads, no tracking. Only anonymous usage statistics, never your files or code, and you can turn them off in Settings.</p></div>
+      <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></svg></div><h3>Instant switching</h3><p>Optional free companions switch themes instantly and color the whole interface: an extension for VS Code and its forks, a plugin for JetBrains IDEs, an open-source plugin for Claude Code.</p></div>
+      <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5 19.5 9.5 11 18l-5-5zM6 13l-2.5 2.5c-1 1-.5 4.5-.5 4.5s3.5.5 4.5-.5L10 17"/></svg></div><h3>Make it yours <span class="tag-pro">Pro</span></h3><p>Change any color, the labels and the waiting animation, then save it as your own theme. Previews update as you type.</p></div>
+      <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/></svg></div><h3>Sounds, if you like <span class="tag-pro">Pro</span></h3><p>Soft sounds in the Claude Code tab when a reply is ready, a permission is needed or something fails. Off by default.</p></div>
+      <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="7" rx="2"/><rect x="13" y="13" width="8" height="7" rx="2"/></svg></div><h3>One palette, many variants</h3><p>Apply the same theme everywhere, or give each editor its own style of the same palette so everything still belongs together.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pricing">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="kicker">Pricing</span>
+      <h2>Free to start. <span class="grad">Pay once for everything.</span></h2>
+      <p>No subscription, no account. Updates included.</p>
+    </div>
+    <div class="plans">
+      <div class="plan rv">
+        <div class="pn">Tinta</div><div class="pp">Free</div><p class="ps">Everything you need to theme every editor.</p>
+        <ul><li class="sal">The complete Salvia palette, in every style</li><li>Every supported editor, IDE and terminal</li><li>Live previews of every theme in the gallery</li><li>One-click apply, one-click undo</li></ul>
+        <a class="btn btn-ghost" href="https://apps.apple.com/app/id6830685209"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download free</a>
+      </div>
+      <div class="plan pro rv">
+        <div class="pn">Tinta Pro</div><div class="pp">One purchase</div><p class="ps">A single in-app purchase. Yours for good.</p>
+        <ul><li>Every theme in the gallery, in every style</li><li>Future themes included as they arrive</li><li>Your own custom themes</li><li>Sounds and signature effects</li><li>Updates included, no subscription</li></ul>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6830685209"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Get Tinta Pro</a>
+        <p class="fine">The price is shown in the App Store for your region. Restore it on any Mac with the same Apple Account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="shead rv"><span class="kicker">FAQ</span><h2>Questions, answered.</h2></div>
+    <div class="faq">
+      <details><summary>Which editors and terminals does Tinta support?</summary><p>Visual Studio Code and its forks (Cursor, Windsurf, VSCodium, Kiro, Antigravity, Trae), JetBrains IDEs such as IntelliJ IDEA, PyCharm and WebStorm, Xcode, Zed, the Code tab of the Claude desktop app and Claude Code in the terminal, Terminal, iTerm2, Ghostty, Warp and the zsh prompt. Each editor is installed separately; Tinta does not include them.</p></details>
+      <details><summary>Will Tinta change anything without asking?</summary><p>No. Nothing changes until you link a tool, and macOS asks you to choose each folder. Tinta writes only theme and settings files, keeps a copy before changing a settings file, and &ldquo;Unlink&rdquo; removes exactly what it added.</p></details>
+      <details><summary>What is free, and what does Tinta Pro add?</summary><p>Tinta is free with the Salvia theme in every style, and every theme in the gallery can be previewed for free. Tinta Pro unlocks every theme in the gallery, including future ones, plus sounds, effects and your own custom themes.</p></details>
+      <details><summary>Is Tinta Pro a subscription?</summary><p>No. It is a one-time in-app purchase with updates included. To use it on another Mac, sign in with the same Apple Account and press &ldquo;Restore Purchases&rdquo; in Tinta's Store.</p></details>
+      <details><summary>Do I need the companion extensions?</summary><p>No, they are optional and free. Without them the theme applies when the editor reloads; with them VS Code-family editors and JetBrains IDEs switch instantly and color their whole interface. The Claude Code tab uses the free, open-source Tinta plugin for Claude Code.</p></details>
+      <details><summary>Does Tinta collect data?</summary><p>Only anonymous usage statistics, with no personal data and no tracking, which you can turn off in Settings. See the <a href="privacy.html">privacy policy</a>.</p></details>
+      <p class="more">More answers on the <a href="support.html">Support page</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="final rv">
+    <img src="img/icon-192.png" width="96" height="96" alt="" decoding="async">
+    <h2>Make every window yours.</h2>
+    <p>One theme, everywhere you code. Free to start on the Mac App Store.</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/app/id6830685209"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download on the Mac App Store</a>
+  </div>
+</section>
+<script type="application/json" id="palettes">{"palettes":[{"id":"salvia","name":"Salvia","tagline":"Eucalyptus and sage; the wave breathes, slowly.","ink":"#0F140F","surface":"#161D17","text":"#E9EFE8","muted":"#95A397","success":"#7FD39A","danger":"#F07A6E","claude":["#4FC4A8","#7FCF98","#A9DDC0","#2FA88E"],"label":["#7FCF98","#2FA88E"],"cmesh":["#4FC4A8","#2FA88E","#7FCF98","#A9DDC0"],"heading":["#B5E6C8","#7FCF98","#4FC4A8"],"wave":["#A9DDC0","#7FCF98","#4FC4A8","#2FA88E"],"cool":"#4FC4A8","user":["#D8C49A","#E6D5AE","#C9B07A","#F0E4C6"],"umesh":["#D8B873","#E6CD97","#F4DEAD","#F3E4BE"],"ubase":"#E6CD97","sig":{"wave":"breath","heading":"leaf","codeHeader":"clay-tray","label":"soft"},"mono":false,"styles":{"minimal":{"userGlowOpacity":null,"meshStrength":1},"outline":{"userGlowOpacity":null,"meshStrength":1},"solid":{"userGlowOpacity":0.48,"meshStrength":1},"sfumature":{"userGlowOpacity":0.7,"meshStrength":0.85}},"ulabel":null,"clabel":null,"veil":null,"spin":"Steeping","ed":[{"tok":{"background":"#0F140F","foreground":"#E9EFE8","keyword":"#4FC4A8","string":"#7FD39A","comment":"#7E8A80","number":"#D8C49A","type":"#7FCF98","function":"#7FCF98","variable":"#E9EFE8","constant":"#DAC9A2","operator":"#BFC9C0"},"vs":{"titleBar.activeBackground":"#0F140F","titleBar.activeForeground":"#E9EFE8","titleBar.border":"#2F3630","activityBar.background":"#0F140F","activityBar.foreground":"#4FC4A8","activityBar.inactiveForeground":"#929791","activityBar.activeBorder":"#4FC4A8","sideBar.background":"#121813","sideBar.foreground":"#E9EFE8","sideBar.border":"#2F3630","sideBarTitle.foreground":"#E9EFE8","list.activeSelectionBackground":"#1F4035","gitDecoration.modifiedResourceForeground":"#7FAE97","gitDecoration.untrackedResourceForeground":"#7FD39A","editorGroupHeader.tabsBackground":"#121813","tab.activeBackground":"#0F140F","tab.activeForeground":"#E9EFE8","tab.activeBorderTop":"#4FC4A8","tab.inactiveBackground":"#121813","tab.inactiveForeground":"#929791","tab.border":"#2F3630","breadcrumb.foreground":"#929791","breadcrumb.background":"#0F140F","editor.background":"#0F140F","editor.lineHighlightBackground":"#1A1F1A","editorLineNumber.foreground":"#626D64","editorLineNumber.activeForeground":"#E9EFE8","editorCursor.foreground":"#4FC4A8","editorGutter.addedBackground":"#7FD39A","editorGutter.modifiedBackground":"#7FAE97","panel.background":"#0F140F","panel.border":"#2F3630","panelTitle.activeForeground":"#E9EFE8","panelTitle.activeBorder":"#4FC4A8","panelTitle.inactiveForeground":"#929791","terminal.ansiGreen":"#7FD39A","terminal.ansiYellow":"#7FAE97","terminal.foreground":"#E9EFE8","statusBar.background":"#161D17","statusBar.foreground":"#E9EFE8","statusBarItem.remoteBackground":"#4FC4A8","statusBarItem.remoteForeground":"#0C100C"},"xc":{"plain":"#E9EFE8","kw":"#4FC4A8","tdecl":"#7FCF98","tref":"#7FCF98","sys":"#9AD7AC","fdecl":"#7FCF98","fcall":"#7FCF98","fsys":"#9AD7AC","str":"#7FD39A","num":"#D8C49A","com":"#7E8A80","mark":"#A3ADA4","prop":"#E9EFE8","const":"#DAC9A2","bg":"#0F140F","line":"#1A1F1A","sel":"#1F4035","caret":"#4FC4A8","cbg":"#0F140F","cout":"#E9EFE8","cprompt":"#7FD39A"},"ja":{"plain":["#E9EFE8",0],"kw":["#4FC4A8",0],"tdecl":["#7FCF98",0],"tref":["#7FCF98",0],"fdecl":["#7FCF98",0],"fcall":["#7FCF98",0],"str":["#7FD39A",0],"num":["#D8C49A",0],"com":["#7E8A80",2],"todo":["#4FC4A8",3],"prop":["#E4E2D0",0],"param":["#E9EFE8",0],"op":["#BFC9C0",0],"const":["#DAC9A2",0]},"jc":{"caretRow":"#1A1F1A","ln":"#626D64","lnCaret":"#E9EFE8","caret":"#4FC4A8","gutter":"#0F140F","sel":"#1F4035","added":"#7FD39A","modified":"#4FC4A8"},"ju":{"MainToolbar.background":"#0F140F","MainToolbar.foreground":"#E9EFE8","ToolWindow.Stripe.background":"#0F140F","ToolWindow.Stripe.foreground":"#929791","ToolWindow.Stripe.selectedForeground":"#4FC4A8","Tree.background":"#121813","Tree.selectionBackground":"#1F4035","EditorTabs.background":"#121813","EditorTabs.selectedBackground":"#0F140F","EditorTabs.underlineColor":"#4FC4A8","EditorTabs.inactiveForeground":"#929791","StatusBar.background":"#161D17","StatusBar.foreground":"#E9EFE8","Borders.color":"#2F3630","Run.icon":"#7FD39A","Popup.background":"#121813","List.selectionBackground":"#1F4035","CompletionPopup.matchForeground":"#4FC4A8"},"term":{"accent":"#4FC4A8","accent2":"#7FCF98","ansi":["#434943","#F07A6E","#7FD39A","#D8C49A","#97BAFB","#DDA3DB","#2FA88E","#D0D8D0","#95A397","#FC9E93","#9FECB6","#F1DEB7","#BED5FD","#F6BEF3","#5AC0A7","#E9EFE8"],"background":"#0F140F","border":"#2F3630","cursor":"#4FC4A8","error":"#F07A6E","foreground":"#E9EFE8","muted":"#95A397","selection":"#1F4035","success":"#7FD39A","surface":"#121813","user":"#D8C49A","warning":"#D8C49A"}}],"edKey":{"minimal":0,"outline":0,"solid":0,"sfumature":0}},{"id":"tinta","name":"Tinta","tagline":"The ink drop: violet and magenta spreading through water.","ink":"#0B0B14","surface":"#14142A","text":"#ECE8F7","muted":"#9A93B8","success":"#5FD4A0","danger":"#FF6B98","claude":["#A970FF","#8B3DFF","#4B3DFF","#F0508F"],"label":["#A970FF","#F0508F"],"cmesh":["#8B3DFF","#FF5CA8","#4B3DFF","#B79CFF"],"heading":["#B48CFF","#7C6CFF","#F0508F"],"wave":["#8B3DFF","#A970FF","#E8317A"],"cool":"#B48CFF","user":["#EABD81","#E18899","#E6A48D","#F1D5A2"],"umesh":["#FF6395","#FF9565","#FFD963","#FFCD37"],"ubase":"#FF8C73","sig":{"wave":"ink","heading":"gradient","codeHeader":"ink-wash","label":"gradient-glow"},"mono":false,"styles":{"minimal":{"userGlowOpacity":null,"meshStrength":1},"outline":{"userGlowOpacity":null,"meshStrength":1},"solid":{"userGlowOpacity":0.48,"meshStrength":1},"sfumature":{"userGlowOpacity":0.7,"meshStrength":1.0}},"ulabel":null,"clabel":null,"veil":null,"spin":"Dipping the pen","ed":[{"tok":{"background":"#0B0B14","foreground":"#ECE8F7","keyword":"#B880FF","string":"#5FD4A0","comment":"#8983A5","number":"#EABD81","type":"#B880FF","function":"#B572FF","variable":"#ECE8F7","constant":"#E18899","operator":"#C3BED8"},"vs":{"titleBar.activeBackground":"#0B0B14","titleBar.activeForeground":"#ECE8F7","titleBar.border":"#2E2D43","activityBar.background":"#0B0B14","activityBar.foreground":"#A970FF","activityBar.inactiveForeground":"#92909C","activityBar.activeBorder":"#A970FF","sideBar.background":"#10101F","sideBar.foreground":"#ECE8F7","sideBar.border":"#2E2D43","sideBarTitle.foreground":"#ECE8F7","list.activeSelectionBackground":"#32244F","gitDecoration.modifiedResourceForeground":"#C36AD3","gitDecoration.untrackedResourceForeground":"#5FD4A0","editorGroupHeader.tabsBackground":"#10101F","tab.activeBackground":"#0B0B14","tab.activeForeground":"#ECE8F7","tab.activeBorderTop":"#A970FF","tab.inactiveBackground":"#10101F","tab.inactiveForeground":"#92909C","tab.border":"#2E2D43","breadcrumb.foreground":"#92909C","breadcrumb.background":"#0B0B14","editor.background":"#0B0B14","editor.lineHighlightBackground":"#16161F","editorLineNumber.foreground":"#6A6581","editorLineNumber.activeForeground":"#ECE8F7","editorCursor.foreground":"#A970FF","editorGutter.addedBackground":"#5FD4A0","editorGutter.modifiedBackground":"#C36AD3","panel.background":"#0B0B14","panel.border":"#2E2D43","panelTitle.activeForeground":"#ECE8F7","panelTitle.activeBorder":"#A970FF","panelTitle.inactiveForeground":"#92909C","terminal.ansiGreen":"#5FD4A0","terminal.ansiYellow":"#C36AD3","terminal.foreground":"#ECE8F7","statusBar.background":"#14142A","statusBar.foreground":"#ECE8F7","statusBarItem.remoteBackground":"#A970FF","statusBarItem.remoteForeground":"#090910"},"xc":{"plain":"#ECE8F7","kw":"#B880FF","tdecl":"#B880FF","tref":"#B880FF","sys":"#C59AFD","fdecl":"#B572FF","fcall":"#B572FF","fsys":"#C390FD","str":"#5FD4A0","num":"#EABD81","com":"#8983A5","mark":"#ACA6C2","prop":"#ECE8F7","const":"#E18899","bg":"#0B0B14","line":"#16161F","sel":"#32244F","caret":"#A970FF","cbg":"#0B0B14","cout":"#ECE8F7","cprompt":"#5FD4A0"},"ja":{"plain":["#ECE8F7",0],"kw":["#B880FF",0],"tdecl":["#B880FF",0],"tref":["#B880FF",0],"fdecl":["#B572FF",0],"fcall":["#B572FF",0],"str":["#5FD4A0",0],"num":["#EABD81",0],"com":["#8983A5",2],"todo":["#A970FF",3],"prop":["#E8C6D6",0],"param":["#ECE8F7",0],"op":["#C3BED8",0],"const":["#E18899",0]},"jc":{"caretRow":"#16161F","ln":"#6A6581","lnCaret":"#ECE8F7","caret":"#A970FF","gutter":"#0B0B14","sel":"#32244F","added":"#5FD4A0","modified":"#A970FF"},"ju":{"MainToolbar.background":"#0B0B14","MainToolbar.foreground":"#ECE8F7","ToolWindow.Stripe.background":"#0B0B14","ToolWindow.Stripe.foreground":"#92909C","ToolWindow.Stripe.selectedForeground":"#A970FF","Tree.background":"#10101F","Tree.selectionBackground":"#32244F","EditorTabs.background":"#10101F","EditorTabs.selectedBackground":"#0B0B14","EditorTabs.underlineColor":"#A970FF","EditorTabs.inactiveForeground":"#92909C","StatusBar.background":"#14142A","StatusBar.foreground":"#ECE8F7","Borders.color":"#2E2D43","Run.icon":"#5FD4A0","Popup.background":"#10101F","List.selectionBackground":"#32244F","CompletionPopup.matchForeground":"#A970FF"},"term":{"accent":"#A970FF","accent2":"#F0508F","ansi":["#41404A","#FF5C6C","#5FD4A0","#EABD81","#5F69F8","#B572FF","#0DA8AF","#D3CFE4","#9A93B8","#FD9295","#85EDBB","#FDD9AB","#616CFB","#C69AFF","#4DC0C6","#ECE8F7"],"background":"#0B0B14","border":"#2E2D43","cursor":"#A970FF","error":"#FF5C6C","foreground":"#ECE8F7","muted":"#9A93B8","selection":"#32244F","success":"#5FD4A0","surface":"#10101F","user":"#EABD81","warning":"#EABD81"}},{"tok":{"background":"#0B0B14","foreground":"#E6E1F5","keyword":"#B07CFF","string":"#F25C9A","comment":"#7D7699","number":"#FFB547","type":"#CDB0FF","function":"#FF9CC2","variable":"#E6E1F5","constant":"#FFC56E","operator":"#B3ACCF"},"vs":{"titleBar.activeBackground":"#0B0B14","titleBar.activeForeground":"#E6E1F5","titleBar.border":"#262645","activityBar.background":"#0B0B14","activityBar.foreground":"#8B3DFF","activityBar.inactiveForeground":"#8E8B9B","activityBar.activeBorder":"#8B3DFF","sideBar.background":"#0F0F1D","sideBar.foreground":"#E6E1F5","sideBar.border":"#262645","sideBarTitle.foreground":"#E6E1F5","list.activeSelectionBackground":"#2E2257","gitDecoration.modifiedResourceForeground":"#C36FE0","gitDecoration.untrackedResourceForeground":"#5FD4A0","editorGroupHeader.tabsBackground":"#0F0F1D","tab.activeBackground":"#0B0B14","tab.activeForeground":"#E6E1F5","tab.activeBorderTop":"#8B3DFF","tab.inactiveBackground":"#0F0F1D","tab.inactiveForeground":"#8E8B9B","tab.border":"#262645","breadcrumb.foreground":"#8E8B9B","breadcrumb.background":"#0B0B14","editor.background":"#0B0B14","editor.lineHighlightBackground":"#14142A","editorLineNumber.foreground":"#615B78","editorLineNumber.activeForeground":"#E6E1F5","editorCursor.foreground":"#E8317A","editorGutter.addedBackground":"#5FD4A0","editorGutter.modifiedBackground":"#C36FE0","panel.background":"#0B0B14","panel.border":"#262645","panelTitle.activeForeground":"#E6E1F5","panelTitle.activeBorder":"#8B3DFF","panelTitle.inactiveForeground":"#8E8B9B","terminal.ansiGreen":"#5FD4A0","terminal.ansiYellow":"#C36FE0","terminal.foreground":"#E6E1F5","statusBar.background":"#14142A","statusBar.foreground":"#E6E1F5","statusBarItem.remoteBackground":"#8B3DFF","statusBarItem.remoteForeground":"#FFFFFF"},"xc":{"plain":"#E6E1F5","kw":"#B07CFF","tdecl":"#CDB0FF","tref":"#CDB0FF","sys":"#D3BCFD","fdecl":"#FF9CC2","fcall":"#FF9CC2","fsys":"#F9ADCF","str":"#F25C9A","num":"#FFB547","com":"#7D7699","mark":"#A29BB9","prop":"#E6E1F5","const":"#FFC56E","bg":"#0B0B14","line":"#14142A","sel":"#2E2257","caret":"#E8317A","cbg":"#0B0B14","cout":"#E6E1F5","cprompt":"#5FD4A0"},"ja":{"plain":["#E6E1F5",0],"kw":["#B07CFF",0],"tdecl":["#CDB0FF",0],"tref":["#CDB0FF",0],"fdecl":["#FF9CC2",0],"fcall":["#FF9CC2",0],"str":["#F25C9A",0],"num":["#FFB547",0],"com":["#7D7699",2],"todo":["#8B3DFF",3],"prop":["#EFD7C6",0],"param":["#E6E1F5",0],"op":["#B3ACCF",0],"const":["#FFC56E",0]},"jc":{"caretRow":"#14142A","ln":"#615B78","lnCaret":"#E6E1F5","caret":"#E8317A","gutter":"#0B0B14","sel":"#2E2257","added":"#5FD4A0","modified":"#8B3DFF"},"ju":{"MainToolbar.background":"#0B0B14","MainToolbar.foreground":"#E6E1F5","ToolWindow.Stripe.background":"#0B0B14","ToolWindow.Stripe.foreground":"#8E8B9B","ToolWindow.Stripe.selectedForeground":"#8B3DFF","Tree.background":"#0F0F1D","Tree.selectionBackground":"#2E2257","EditorTabs.background":"#0F0F1D","EditorTabs.selectedBackground":"#0B0B14","EditorTabs.underlineColor":"#8B3DFF","EditorTabs.inactiveForeground":"#8E8B9B","StatusBar.background":"#14142A","StatusBar.foreground":"#E6E1F5","Borders.color":"#262645","Run.icon":"#5FD4A0","Popup.background":"#0F0F1D","List.selectionBackground":"#2E2257","CompletionPopup.matchForeground":"#8B3DFF"},"term":{"accent":"#A970FF","accent2":"#F0508F","ansi":["#43424D","#FF6B98","#5FD4A0","#FFC56E","#5F69F8","#CDB0FF","#0DA8AF","#CFCAE3","#9A93B8","#FBA0B6","#85EDBB","#FEE7C7","#616CFB","#E1D2FF","#4DC0C6","#E6E1F5"],"background":"#0B0B14","border":"#262645","cursor":"#A970FF","error":"#FF6B98","foreground":"#E6E1F5","muted":"#9A93B8","selection":"#2E2257","success":"#5FD4A0","surface":"#0F0F1D","user":"#FFB547","warning":"#FFC56E"}}],"edKey":{"minimal":0,"outline":0,"solid":0,"sfumature":1}},{"id":"aurora","name":"Aurora","tagline":"Polar curtains in green, teal and violet, gently swaying.","ink":"#081416","surface":"#0E1F21","text":"#E4F4EF","muted":"#8DA9A3","success":"#5FD49A","danger":"#FF6B7A","claude":["#3EE6C1","#7CF29A","#8C7BFF","#2FD0B5"],"label":["#3EE6C1","#8C7BFF"],"cmesh":["#2FD6B0","#7C6BFF","#2FD0B5","#9CF5B8"],"heading":["#7CF29A","#3EE6C1","#8C7BFF"],"wave":["#7CF29A","#3EE6C1","#8C7BFF"],"cool":"#3EE6C1","user":["#EDC798","#F2D8B5","#E3BB98","#F6E4C5"],"umesh":["#FFBA6D","#FFC659","#FFDB8F","#FFDFA0"],"ubase":"#FFCF7F","sig":{"wave":"curtain","heading":"gradient-drift","codeHeader":"polar-glow","label":"gradient"},"mono":false,"styles":{"minimal":{"userGlowOpacity":null,"meshStrength":1},"outline":{"userGlowOpacity":null,"meshStrength":1},"solid":{"userGlowOpacity":0.48,"meshStrength":1},"sfumature":{"userGlowOpacity":0.7,"meshStrength":0.79}},"ulabel":null,"clabel":null,"veil":null,"spin":"Kindling the aurora","ed":[{"tok":{"background":"#081416","foreground":"#E4F4EF","keyword":"#3EE6C1","string":"#5FD49A","comment":"#77908C","number":"#E9C394","type":"#3EE6C1","function":"#72E890","variable":"#E4F4EF","constant":"#E0C6A4","operator":"#B8CEC9"},"vs":{"titleBar.activeBackground":"#081416","titleBar.activeForeground":"#E4F4EF","titleBar.border":"#28393A","activityBar.background":"#081416","activityBar.foreground":"#3EE6C1","activityBar.inactiveForeground":"#8C9A98","activityBar.activeBorder":"#3EE6C1","sideBar.background":"#0B1A1C","sideBar.foreground":"#E4F4EF","sideBar.border":"#28393A","sideBarTitle.foreground":"#E4F4EF","list.activeSelectionBackground":"#164841","gitDecoration.modifiedResourceForeground":"#78C1AC","gitDecoration.untrackedResourceForeground":"#5FD49A","editorGroupHeader.tabsBackground":"#0B1A1C","tab.activeBackground":"#081416","tab.activeForeground":"#E4F4EF","tab.activeBorderTop":"#3EE6C1","tab.inactiveBackground":"#0B1A1C","tab.inactiveForeground":"#8C9A98","tab.border":"#28393A","breadcrumb.foreground":"#8C9A98","breadcrumb.background":"#081416","editor.background":"#081416","editor.lineHighlightBackground":"#131F21","editorLineNumber.foreground":"#5B716F","editorLineNumber.activeForeground":"#E4F4EF","editorCursor.foreground":"#3EE6C1","editorGutter.addedBackground":"#5FD49A","editorGutter.modifiedBackground":"#78C1AC","panel.background":"#081416","panel.border":"#28393A","panelTitle.activeForeground":"#E4F4EF","panelTitle.activeBorder":"#3EE6C1","panelTitle.inactiveForeground":"#8C9A98","terminal.ansiGreen":"#5FD49A","terminal.ansiYellow":"#78C1AC","terminal.foreground":"#E4F4EF","statusBar.background":"#0E1F21","statusBar.foreground":"#E4F4EF","statusBarItem.remoteBackground":"#3EE6C1","statusBarItem.remoteForeground":"#061012"},"xc":{"plain":"#E4F4EF","kw":"#3EE6C1","tdecl":"#3EE6C1","tref":"#3EE6C1","sys":"#68EACD","fdecl":"#72E890","fcall":"#72E890","fsys":"#8FEBA8","str":"#5FD49A","num":"#E9C394","com":"#77908C","mark":"#9DB3AF","prop":"#E4F4EF","const":"#E0C6A4","bg":"#081416","line":"#131F21","sel":"#164841","caret":"#3EE6C1","cbg":"#081416","cout":"#E4F4EF","cprompt":"#5FD49A"},"ja":{"plain":["#E4F4EF",0],"kw":["#3EE6C1",0],"tdecl":["#3EE6C1",0],"tref":["#3EE6C1",0],"fdecl":["#72E890",0],"fcall":["#72E890",0],"str":["#5FD49A",0],"num":["#E9C394",0],"com":["#77908C",2],"todo":["#3EE6C1",3],"prop":["#E3E4D5",0],"param":["#E4F4EF",0],"op":["#B8CEC9",0],"const":["#E0C6A4",0]},"jc":{"caretRow":"#131F21","ln":"#5B716F","lnCaret":"#E4F4EF","caret":"#3EE6C1","gutter":"#081416","sel":"#164841","added":"#5FD49A","modified":"#3EE6C1"},"ju":{"MainToolbar.background":"#081416","MainToolbar.foreground":"#E4F4EF","ToolWindow.Stripe.background":"#081416","ToolWindow.Stripe.foreground":"#8C9A98","ToolWindow.Stripe.selectedForeground":"#3EE6C1","Tree.background":"#0B1A1C","Tree.selectionBackground":"#164841","EditorTabs.background":"#0B1A1C","EditorTabs.selectedBackground":"#081416","EditorTabs.underlineColor":"#3EE6C1","EditorTabs.inactiveForeground":"#8C9A98","StatusBar.background":"#0E1F21","StatusBar.foreground":"#E4F4EF","Borders.color":"#28393A","Run.icon":"#5FD49A","Popup.background":"#0B1A1C","List.selectionBackground":"#164841","CompletionPopup.matchForeground":"#3EE6C1"},"term":{"accent":"#3EE6C1","accent2":"#8C7BFF","ansi":["#3D4A4A","#FF6B7A","#5FD49A","#E9C394","#8C7BFF","#FBA4F8","#2FD0B5","#CADED8","#8DA9A3","#FF9CA1","#84EDB6","#FDDFBA","#A49EFD","#FED1FC","#65E8CF","#E4F4EF"],"background":"#081416","border":"#28393A","cursor":"#3EE6C1","error":"#FF6B7A","foreground":"#E4F4EF","muted":"#8DA9A3","selection":"#164841","success":"#5FD49A","surface":"#0B1A1C","user":"#EDC798","warning":"#E9C394"}}],"edKey":{"minimal":0,"outline":0,"solid":0,"sfumature":0}},{"id":"neon","name":"Neon","tagline":"Cyan and magenta neon tubes, flickering as they switch on.","ink":"#0A0713","surface":"#130D22","text":"#F2ECFF","muted":"#9B8FB8","success":"#00E98D","danger":"#FF3D6E","claude":["#00E5FF","#FF2BD6","#00B8E6","#FF7AE6"],"label":["#00E5FF","#FF2BD6"],"cmesh":["#00C8FF","#FF2BD6","#00E5FF","#FF7AE6"],"heading":["#00E5FF","#7FC8FF","#FF2BD6"],"wave":["#00E5FF","#FF2BD6"],"cool":"#00E5FF","user":["#E39B68","#E9B974","#E6AC78","#EDC88F"],"umesh":["#FF8600","#FFA000","#FFB300","#FFC833"],"ubase":"#FF9900","sig":{"wave":"flicker","heading":"neon-tube","codeHeader":"synthwave","label":"tube-glow"},"mono":false,"styles":{"minimal":{"userGlowOpacity":null,"meshStrength":1},"outline":{"userGlowOpacity":null,"meshStrength":1},"solid":{"userGlowOpacity":0.48,"meshStrength":1},"sfumature":{"userGlowOpacity":0.7,"meshStrength":0.88}},"ulabel":null,"clabel":null,"veil":null,"spin":"Powering the tubes","ed":[{"tok":{"background":"#0A0713","foreground":"#F2ECFF","keyword":"#00E4FE","string":"#00E98D","comment":"#8A7FA5","number":"#E39B68","type":"#00E4FE","function":"#FF3AE0","variable":"#F2ECFF","constant":"#E9B974","operator":"#C6BEDC"},"vs":{"titleBar.activeBackground":"#0A0713","titleBar.activeForeground":"#F2ECFF","titleBar.border":"#2E283D","activityBar.background":"#0A0713","activityBar.foreground":"#00E5FF","activityBar.inactiveForeground":"#9590A1","activityBar.activeBorder":"#00E5FF","sideBar.background":"#0E0A1A","sideBar.foreground":"#F2ECFF","sideBar.border":"#2E283D","sideBarTitle.foreground":"#F2ECFF","list.activeSelectionBackground":"#083E4E","gitDecoration.modifiedResourceForeground":"#4DB3D4","gitDecoration.untrackedResourceForeground":"#00E98D","editorGroupHeader.tabsBackground":"#0E0A1A","tab.activeBackground":"#0A0713","tab.activeForeground":"#F2ECFF","tab.activeBorderTop":"#00E5FF","tab.inactiveBackground":"#0E0A1A","tab.inactiveForeground":"#9590A1","tab.border":"#2E283D","breadcrumb.foreground":"#9590A1","breadcrumb.background":"#0A0713","editor.background":"#0A0713","editor.lineHighlightBackground":"#16121F","editorLineNumber.foreground":"#6A6181","editorLineNumber.activeForeground":"#F2ECFF","editorCursor.foreground":"#00E5FF","editorGutter.addedBackground":"#00E98D","editorGutter.modifiedBackground":"#4DB3D4","panel.background":"#0A0713","panel.border":"#2E283D","panelTitle.activeForeground":"#F2ECFF","panelTitle.activeBorder":"#00E5FF","panelTitle.inactiveForeground":"#9590A1","terminal.ansiGreen":"#00E98D","terminal.ansiYellow":"#4DB3D4","terminal.foreground":"#F2ECFF","statusBar.background":"#130D22","statusBar.foreground":"#F2ECFF","statusBarItem.remoteBackground":"#00E5FF","statusBarItem.remoteForeground":"#08060F"},"xc":{"plain":"#F2ECFF","kw":"#00E4FE","tdecl":"#00E4FE","tref":"#00E4FE","sys":"#3DE6FE","fdecl":"#FF3AE0","fcall":"#FF3AE0","fsys":"#FC67E8","str":"#00E98D","num":"#E39B68","com":"#8A7FA5","mark":"#AEA5C5","prop":"#F2ECFF","const":"#E9B974","bg":"#0A0713","line":"#16121F","sel":"#083E4E","caret":"#00E5FF","cbg":"#0A0713","cout":"#F2ECFF","cprompt":"#00E98D"},"ja":{"plain":["#F2ECFF",0],"kw":["#00E4FE",0],"tdecl":["#00E4FE",0],"tref":["#00E4FE",0],"fdecl":["#FF3AE0",0],"fcall":["#FF3AE0",0],"str":["#00E98D",0],"num":["#E39B68",0],"com":["#8A7FA5",2],"todo":["#00E5FF",3],"prop":["#EFDACE",0],"param":["#F2ECFF",0],"op":["#C6BEDC",0],"const":["#E9B974",0]},"jc":{"caretRow":"#16121F","ln":"#6A6181","lnCaret":"#F2ECFF","caret":"#00E5FF","gutter":"#0A0713","sel":"#083E4E","added":"#00E98D","modified":"#00E5FF"},"ju":{"MainToolbar.background":"#0A0713","MainToolbar.foreground":"#F2ECFF","ToolWindow.Stripe.background":"#0A0713","ToolWindow.Stripe.foreground":"#9590A1","ToolWindow.Stripe.selectedForeground":"#00E5FF","Tree.background":"#0E0A1A","Tree.selectionBackground":"#083E4E","EditorTabs.background":"#0E0A1A","EditorTabs.selectedBackground":"#0A0713","EditorTabs.underlineColor":"#00E5FF","EditorTabs.inactiveForeground":"#9590A1","StatusBar.background":"#130D22","StatusBar.foreground":"#F2ECFF","Borders.color":"#2E283D","Run.icon":"#00E98D","Popup.background":"#0E0A1A","List.selectionBackground":"#083E4E","CompletionPopup.matchForeground":"#00E5FF"},"term":{"accent":"#00E5FF","accent2":"#FF2BD6","ansi":["#423E4C","#FF3D6E","#00E98D","#E9B974","#8DB4FB","#FF7AE6","#00E5FF","#D8D0EA","#9B8FB8","#FC8193","#7DFDB4","#FED59B","#B3CEFE","#FCB1EB","#B0F3FF","#F2ECFF"],"background":"#0A0713","border":"#2E283D","cursor":"#00E5FF","error":"#FF3D6E","foreground":"#F2ECFF","muted":"#9B8FB8","selection":"#083E4E","success":"#00E98D","surface":"#0E0A1A","user":"#E39B68","warning":"#E9B974"}}],"edKey":{"minimal":0,"outline":0,"solid":0,"sfumature":0}},{"id":"fosforo","name":"Fosforo","tagline":"The phosphor terminal: raining glyphs and headings that decode themselves.","ink":"#050A06","surface":"#0A140C","text":"#DDF5E2","muted":"#6F9A80","success":"#00EA74","danger":"#E5736B","claude":["#39FF88","#1FE070","#9DFFC4","#00C26A"],"label":["#9DFFC4","#1FE070"],"cmesh":["#1FE070","#00C26A","#39FF88","#0A7A45"],"heading":["#C8FFE0","#39FF88","#1FE070"],"wave":["#9DFFC4","#39FF88","#1FE070","#00C26A"],"cool":"#1FE070","user":["#5A7065","#8FA89A","#6F8A7C","#A3B8AB"],"umesh":["#729583","#93B3A1","#A8C3B3","#BED5C7"],"ubase":"#93B3A1","sig":{"wave":"rain","heading":"decode","codeHeader":"terminal","label":"prompt"},"mono":true,"styles":{"minimal":{"userGlowOpacity":null,"meshStrength":1},"outline":{"userGlowOpacity":null,"meshStrength":1},"solid":{"userGlowOpacity":0.48,"meshStrength":1},"sfumature":{"userGlowOpacity":0.7,"meshStrength":0.81}},"ulabel":null,"clabel":null,"veil":null,"spin":"Decoding","ed":[{"tok":{"background":"#050A06","foreground":"#DDF5E2","keyword":"#19F17B","string":"#00EA74","comment":"#638972","number":"#94AB9F","type":"#81E3A9","function":"#1FE070","variable":"#DDF5E2","constant":"#93AC9E","operator":"#A6C8B1"},"vs":{"titleBar.activeBackground":"#050A06","titleBar.activeForeground":"#DDF5E2","titleBar.border":"#232F26","activityBar.background":"#050A06","activityBar.foreground":"#39FF88","activityBar.inactiveForeground":"#87978A","activityBar.activeBorder":"#39FF88","sideBar.background":"#080F09","sideBar.foreground":"#DDF5E2","sideBar.border":"#232F26","sideBarTitle.foreground":"#DDF5E2","list.activeSelectionBackground":"#124726","gitDecoration.modifiedResourceForeground":"#6DD57F","gitDecoration.untrackedResourceForeground":"#00EA74","editorGroupHeader.tabsBackground":"#080F09","tab.activeBackground":"#050A06","tab.activeForeground":"#DDF5E2","tab.activeBorderTop":"#39FF88","tab.inactiveBackground":"#080F09","tab.inactiveForeground":"#87978A","tab.border":"#232F26","breadcrumb.foreground":"#87978A","breadcrumb.background":"#050A06","editor.background":"#050A06","editor.lineHighlightBackground":"#101611","editorLineNumber.foreground":"#4C6957","editorLineNumber.activeForeground":"#DDF5E2","editorCursor.foreground":"#39FF88","editorGutter.addedBackground":"#00EA74","editorGutter.modifiedBackground":"#6DD57F","panel.background":"#050A06","panel.border":"#232F26","panelTitle.activeForeground":"#DDF5E2","panelTitle.activeBorder":"#39FF88","panelTitle.inactiveForeground":"#87978A","terminal.ansiGreen":"#00EA74","terminal.ansiYellow":"#6DD57F","terminal.foreground":"#DDF5E2","statusBar.background":"#0A140C","statusBar.foreground":"#DDF5E2","statusBarItem.remoteBackground":"#39FF88","statusBarItem.remoteForeground":"#040805"},"xc":{"plain":"#DDF5E2","kw":"#19F17B","tdecl":"#81E3A9","tref":"#81E3A9","sys":"#98E8B7","fdecl":"#1FE070","fcall":"#1FE070","fsys":"#4FE58D","str":"#00EA74","num":"#94AB9F","com":"#638972","mark":"#8EAF99","prop":"#DDF5E2","const":"#93AC9E","bg":"#050A06","line":"#101611","sel":"#124726","caret":"#39FF88","cbg":"#050A06","cout":"#DDF5E2","cprompt":"#00EA74"},"ja":{"plain":["#DDF5E2",0],"kw":["#19F17B",0],"tdecl":["#81E3A9",0],"tref":["#81E3A9",0],"fdecl":["#1FE070",0],"fcall":["#1FE070",0],"str":["#00EA74",0],"num":["#94AB9F",0],"com":["#638972",2],"todo":["#39FF88",3],"prop":["#C3DBCA",0],"param":["#DDF5E2",0],"op":["#A6C8B1",0],"const":["#93AC9E",0]},"jc":{"caretRow":"#101611","ln":"#4C6957","lnCaret":"#DDF5E2","caret":"#39FF88","gutter":"#050A06","sel":"#124726","added":"#00EA74","modified":"#39FF88"},"ju":{"MainToolbar.background":"#050A06","MainToolbar.foreground":"#DDF5E2","ToolWindow.Stripe.background":"#050A06","ToolWindow.Stripe.foreground":"#87978A","ToolWindow.Stripe.selectedForeground":"#39FF88","Tree.background":"#080F09","Tree.selectionBackground":"#124726","EditorTabs.background":"#080F09","EditorTabs.selectedBackground":"#050A06","EditorTabs.underlineColor":"#39FF88","EditorTabs.inactiveForeground":"#87978A","StatusBar.background":"#0A140C","StatusBar.foreground":"#DDF5E2","Borders.color":"#232F26","Run.icon":"#00EA74","Popup.background":"#080F09","List.selectionBackground":"#124726","CompletionPopup.matchForeground":"#39FF88"},"term":{"accent":"#39FF88","accent2":"#1FE070","ansi":["#39423B","#E5736B","#00EA74","#FCD527","#C5D9FC","#FEBFFB","#1EF4FE","#BCDAC5","#6F9A80","#FC9087","#7CFEA2","#FEEFB5","#E6EFFF","#FFE5FD","#C1FBFE","#DDF5E2"],"background":"#050A06","border":"#232F26","cursor":"#39FF88","error":"#E5736B","foreground":"#DDF5E2","muted":"#6F9A80","selection":"#124726","success":"#00EA74","surface":"#080F09","user":"#687E73","warning":"#FCD527"}},{"tok":{"background":"#050A06","foreground":"#DDF5E2","keyword":"#19F17B","string":"#00EA74","comment":"#638972","number":"#94AB9F","type":"#81E3A9","function":"#1FE070","variable":"#DDF5E2","constant":"#93AC9E","operator":"#A6C8B1"},"vs":{"titleBar.activeBackground":"#050A06","titleBar.activeForeground":"#DDF5E2","titleBar.border":"#232F26","activityBar.background":"#050A06","activityBar.foreground":"#39FF88","activityBar.inactiveForeground":"#87978A","activityBar.activeBorder":"#39FF88","sideBar.background":"#080F09","sideBar.foreground":"#DDF5E2","sideBar.border":"#232F26","sideBarTitle.foreground":"#DDF5E2","list.activeSelectionBackground":"#124726","gitDecoration.modifiedResourceForeground":"#6DD57F","gitDecoration.untrackedResourceForeground":"#00EA74","editorGroupHeader.tabsBackground":"#080F09","tab.activeBackground":"#050A06","tab.activeForeground":"#DDF5E2","tab.activeBorderTop":"#39FF88","tab.inactiveBackground":"#080F09","tab.inactiveForeground":"#87978A","tab.border":"#232F26","breadcrumb.foreground":"#87978A","breadcrumb.background":"#050A06","editor.background":"#050A06","editor.lineHighlightBackground":"#101611","editorLineNumber.foreground":"#4C6957","editorLineNumber.activeForeground":"#DDF5E2","editorCursor.foreground":"#39FF88","editorGutter.addedBackground":"#00EA74","editorGutter.modifiedBackground":"#6DD57F","panel.background":"#050A06","panel.border":"#232F26","panelTitle.activeForeground":"#DDF5E2","panelTitle.activeBorder":"#39FF88","panelTitle.inactiveForeground":"#87978A","terminal.ansiGreen":"#00EA74","terminal.ansiYellow":"#6DD57F","terminal.foreground":"#DDF5E2","statusBar.background":"#0A140C","statusBar.foreground":"#DDF5E2","statusBarItem.remoteBackground":"#39FF88","statusBarItem.remoteForeground":"#040805"},"xc":{"plain":"#DDF5E2","kw":"#19F17B","tdecl":"#81E3A9","tref":"#81E3A9","sys":"#98E8B7","fdecl":"#1FE070","fcall":"#1FE070","fsys":"#4FE58D","str":"#00EA74","num":"#94AB9F","com":"#638972","mark":"#8EAF99","prop":"#DDF5E2","const":"#93AC9E","bg":"#050A06","line":"#101611","sel":"#124726","caret":"#39FF88","cbg":"#050A06","cout":"#DDF5E2","cprompt":"#00EA74"},"ja":{"plain":["#DDF5E2",0],"kw":["#19F17B",0],"tdecl":["#81E3A9",0],"tref":["#81E3A9",0],"fdecl":["#1FE070",0],"fcall":["#1FE070",0],"str":["#00EA74",0],"num":["#94AB9F",0],"com":["#638972",2],"todo":["#39FF88",3],"prop":["#C3DBCA",0],"param":["#DDF5E2",0],"op":["#A6C8B1",0],"const":["#93AC9E",0]},"jc":{"caretRow":"#101611","ln":"#4C6957","lnCaret":"#DDF5E2","caret":"#39FF88","gutter":"#050A06","sel":"#124726","added":"#00EA74","modified":"#39FF88"},"ju":{"MainToolbar.background":"#050A06","MainToolbar.foreground":"#DDF5E2","ToolWindow.Stripe.background":"#050A06","ToolWindow.Stripe.foreground":"#87978A","ToolWindow.Stripe.selectedForeground":"#39FF88","Tree.background":"#080F09","Tree.selectionBackground":"#124726","EditorTabs.background":"#080F09","EditorTabs.selectedBackground":"#050A06","EditorTabs.underlineColor":"#39FF88","EditorTabs.inactiveForeground":"#87978A","StatusBar.background":"#0A140C","StatusBar.foreground":"#DDF5E2","Borders.color":"#232F26","Run.icon":"#00EA74","Popup.background":"#080F09","List.selectionBackground":"#124726","CompletionPopup.matchForeground":"#39FF88"},"term":{"accent":"#39FF88","accent2":"#9DFFC4","ansi":["#39423B","#E5736B","#00EA74","#FCD527","#C5D9FC","#FEBFFB","#1EF4FE","#BCDAC5","#6F9A80","#FC9087","#7CFEA2","#FEEFB5","#E6EFFF","#FFE5FD","#C1FBFE","#DDF5E2"],"background":"#050A06","border":"#232F26","cursor":"#39FF88","error":"#E5736B","foreground":"#DDF5E2","muted":"#6F9A80","selection":"#124726","success":"#00EA74","surface":"#080F09","user":"#687E73","warning":"#FCD527"}}],"edKey":{"minimal":0,"outline":0,"solid":1,"sfumature":1}}],"styles":[["minimal","Minimal"],["outline","Outline"],["solid","Solid"],["sfumature","Gradient"]],"captions":{"minimal":"Color only, on the text: tinted labels, headings and badges, no fills.","outline":"Thin lines: capsules, bubbles and the code window drawn as outlines.","sfumature":"The full character: shaded fills, gradient headings and the palette's signature effect.","solid":"Calm solid fills: tinted bubbles, capsule labels, gradient headings."}}</script>
 
 </main>
-<footer class="fine">
-  <div data-lang="en">Tinta is an independent app, not affiliated with or endorsed by Anthropic, Microsoft, JetBrains or Apple. Claude and Claude Code are trademarks of Anthropic, PBC; Visual Studio Code of Microsoft Corporation; IntelliJ IDEA and other JetBrains product names of JetBrains s.r.o.; Xcode and Mac App Store of Apple Inc. Other names belong to their respective owners and are used only to describe compatibility.<br>&copy; 2026 Gabriele Chesi. This website uses no cookies, analytics or external resources.</div>
-  <div data-lang="it">Tinta e&grave; un'app indipendente, non affiliata n&eacute; approvata da Anthropic, Microsoft, JetBrains o Apple. Claude e Claude Code sono marchi di Anthropic, PBC; Visual Studio Code di Microsoft Corporation; IntelliJ IDEA e gli altri nomi dei prodotti JetBrains di JetBrains s.r.o.; Xcode e Mac App Store di Apple Inc. Gli altri nomi appartengono ai rispettivi proprietari e sono usati solo per indicare la compatibilit&agrave;.<br>&copy; 2026 Gabriele Chesi. Questo sito non usa cookie, statistiche n&eacute; risorse esterne.</div>
-</footer>
-</div>
-<script>
-(function(){
-  var q = new URLSearchParams(location.search).get('lang');
-  var nav = (navigator.language || 'en').toLowerCase();
-  var lang = q === 'it' || q === 'en' ? q : (nav.indexOf('it') === 0 ? 'it' : 'en');
-  function set(l){
-    document.documentElement.lang = l;
-    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.set === l); });
-    var t = document.querySelector('meta[name=title-' + l + ']'); if (t) document.title = t.content;
+<footer class="site"><div class="wrap">
+  <div class="top">
+    <a class="brand" href="index.html"><img src="img/icon-64.png" width="30" height="30" alt="">Tinta <small>Code Themes</small></a>
+    <nav aria-label="Footer"><a href="index.html#live">Previews</a><a href="index.html#pricing">Pricing</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="license.html">License</a><a href="mailto:usableutilities@gmail.com">usableutilities@gmail.com</a><a href="https://apps.apple.com/app/id6830685209">Mac App Store</a></nav>
+  </div>
+  <p class="legal">Tinta is an independent app, not affiliated with or endorsed by Anthropic, Microsoft, JetBrains or Apple. Claude and Claude Code are trademarks of Anthropic, PBC; Visual Studio Code of Microsoft Corporation; IntelliJ IDEA and other JetBrains product names of JetBrains s.r.o.; Xcode and Mac App Store of Apple Inc. Other names belong to their respective owners and are used only to describe compatibility. This website uses no cookies, analytics or external resources.</p>
+  <p class="copy">&copy; 2026 UsableUtilities</p>
+</div></footer>
+<script>(function () {
+  'use strict';
+  var DATA = JSON.parse(document.getElementById('palettes').textContent);
+  var P = DATA.palettes, STYLES = DATA.styles, CAPS = DATA.captions;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var state = { pal: 'tinta', style: 'sfumature' };
+  var qs = new URLSearchParams(location.search), pinned = false;
+  if (qs.get('palette')) { state.pal = qs.get('palette'); pinned = true; }
+  if (qs.get('style')) { state.style = qs.get('style'); pinned = true; }
+  var byId = {}; P.forEach(function (p) { byId[p.id] = p; });
+  if (!byId[state.pal]) state.pal = 'tinta';
+  if (!CAPS[state.style]) state.style = 'sfumature';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+  var al = function (hex, a) { return hex.slice(0, 7) + Math.round(Math.max(0, Math.min(1, a)) * 255).toString(16).padStart(2, '0'); };
+  var lg = function (cols, ang) { return 'linear-gradient(' + (ang || 90) + 'deg, ' + cols.join(', ') + ')'; };
+  var gradText = function (bg) { return 'background:' + bg + ';-webkit-background-clip:text;background-clip:text;color:transparent;'; };
+
+  // ---------- the same Swift file every editor preview in the app shows
+  var CODE = [
+    [['// Reads the configuration from disk.', 'com']],
+    [['struct', 'kw'], [' '], ['ConfigReader', 'tdecl'], [' {', 'op']],
+    [['    '], ['let', 'kw'], [' '], ['maxSize', 'prop', 'sel'], [' = ', 'op'], ['64_000', 'num']],
+    [],
+    [['    '], ['func', 'kw'], [' '], ['read', 'fdecl'], ['(', 'op'], ['_', 'kw'], [' '], ['url', 'param'], [': ', 'op'], ['URL', 'sys'], [') ', 'op'], ['throws', 'kw'], [' -> ', 'op'], ['RawConfig', 'tref'], [' {', 'op']],
+    [['        '], ['let', 'kw'], [' '], ['data', 'plain'], [' = ', 'op'], ['try', 'kw'], [' '], ['Data', 'sys'], ['(contentsOf: ', 'op'], ['url', 'param'], [')', 'op']],
+    [['        '], ['guard', 'kw'], [' data.', 'plain'], ['count', 'prop'], [' < ', 'op'], ['maxSize', 'prop'], [' '], ['else', 'kw'], [' { ', 'op'], ['throw', 'kw'], [' '], ['ConfigError', 'tref'], ['.', 'op'], ['tooLarge', 'const'], [' }', 'op']],
+    [['        '], ['return', 'kw'], [' '], ['try', 'kw'], [' '], ['JSONDecoder', 'sys'], ['().', 'op'], ['decode', 'fsys'], ['(', 'op'], ['RawConfig', 'tref'], ['.', 'op'], ['self', 'kw'], [', from: data)', 'op']],
+    [['    }', 'op']],
+    [['}', 'op']],
+    [],
+    [['// TODO: validate the port', 'todo']],
+    [['let', 'kw'], [' '], ['reader', 'plain', 'warn'], [' = ', 'op'], ['ConfigReader', 'tref'], ['()', 'op']],
+    [['print', 'fsys'], ['(', 'op'], ['"Ready: \\(', 'str'], ['reader', 'plain'], ['.', 'op'], ['maxSize', 'prop'], [')"', 'str'], [')', 'op']]
+  ];
+  var CARET = 3;
+  function codeLines(opts) {
+    return CODE.map(function (line, i) {
+      var n = i + 1, caret = n === CARET;
+      var body = line.map(function (seg) {
+        var cls = 'r-' + (seg[1] || 'plain');
+        var t = esc(seg[0]);
+        if (seg[2] === 'sel' && opts.sel) return '<span class="' + cls + ' sel">' + t + '</span>' + (opts.caretAfterSel ? '<i class="caret"></i>' : '');
+        if (seg[2] === 'warn' && opts.warn) return '<span class="' + cls + ' ul">' + t + '</span>';
+        return '<span class="' + cls + '">' + t + '</span>';
+      }).join('');
+      var gut = opts.gutter && opts.gutter[n] ? '<i style="position:absolute;right:.7em;top:.15em;bottom:.15em;width:.2em;background:' + opts.gutter[n] + '"></i>' : '';
+      return '<div class="ln"' + (caret ? ' style="background:var(--lnhl)"' : '') + '><span class="n" style="position:relative;color:' + (caret ? 'var(--lnon)' : 'var(--lnoff)') + '">' + n + gut + '</span><span class="code">' + body + (caret && !opts.caretAfterSel ? '<i class="caret"></i>' : '') + '</span></div>';
+    }).join('');
   }
-  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ set(b.dataset.set); }); });
-  set(lang);
+  var I = {
+    files: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3h7l4 4v11a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M4 7v13a1 1 0 0 0 1 1h10"/></svg>',
+    search: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg>',
+    branch: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7c0 5 6 5 6 10M18 7c0 5-6 5-6 10"/></svg>',
+    play: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 5l12 7-12 7z"/></svg>',
+    grid: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>',
+    folder: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>',
+    term: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m7 10 3 2-3 2M12 15h5"/></svg>',
+    warn: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4 3 20h18z"/><path d="M12 10v4M12 17v.5"/></svg>',
+    swift: '<svg style="width:1em;height:1em;flex:none" viewBox="0 0 16 16" fill="currentColor"><path d="M3 4.5c2.6 2 5 3.6 6.6 4.5C7.2 7.3 5.2 5.4 4.2 4c2 1.5 5.2 3.6 6.4 4.3.2-1.6-.6-3.6-2.2-5.3 2.8 1.4 4.6 4.4 3.9 6.9 1 1.2 1.2 2.4 1 2.7-.4-.8-1.3-1.1-2-.8-2.2 1.3-5.6.9-8.3-1.4 1.6.6 3.6.8 5.2.1C6 9.6 4.2 7.4 3 4.5z"/></svg>',
+    hammer: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 6l4 4-2 2-4-4zM12 8l-8 8 2 2 8-8"/></svg>'
+  };
+
+  // ---------- VS Code
+  function vsHTML() {
+    var files = [['Sources', 1], ['ConfigReader.swift', 0, 'on'], ['Validator.swift', 0, 'u'], ['Parser.swift', 0], ['Tests', 1], ['Package.swift', 0]];
+    return '<div class="win vs" style="background:var(--vs-ebg)">' +
+      '<div class="tb" style="background:var(--vs-tbbg);color:var(--vs-tbfg);border-bottom:1px solid var(--vs-tbb)"><span class="tl"><i></i><i></i><i></i></span>tinta — ConfigReader.swift</div>' +
+      '<div class="body"><div class="act" style="background:var(--vs-abg);color:var(--vs-ain)">' +
+      [I.files, I.search, I.branch, I.play, I.grid].map(function (ic, i) { return '<span' + (i === 0 ? ' class="on" style="color:var(--vs-afg)"' : '') + '>' + ic + '</span>'; }).join('') + '</div>' +
+      '<div class="exp" style="background:var(--vs-sbg);color:var(--vs-sfg);border-right:1px solid var(--vs-sb)"><div class="h" style="color:var(--vs-stitle)">EXPLORER</div><div class="h" style="padding-top:0;font-weight:700">⌄ TINTA</div>' +
+      files.map(function (f) {
+        var style = f[2] === 'on' ? ' style="background:var(--vs-lsel)"' : '';
+        var col = f[2] === 'u' ? 'color:var(--vs-untr)' : '';
+        return '<div class="f' + (f[1] ? ' d' : '') + '"' + style + '>' + (f[1] ? '<span style="opacity:.8">⌄</span>' : '<span style="color:var(--vs-mod)">' + I.swift + '</span>') + '<span style="' + col + '">' + f[0] + '</span>' + (f[2] === 'u' ? '<em style="color:var(--vs-untr)">U</em>' : '') + '</div>';
+      }).join('') + '</div>' +
+      '<div class="ed"><div class="tabs" style="background:var(--vs-tabsbg)">' +
+      '<div class="tab" style="background:var(--vs-tabon);color:var(--vs-tabonfg);box-shadow:inset 0 .1em 0 var(--vs-tabtop),inset -1px 0 0 var(--vs-tabb)"><span style="color:var(--vs-mod)">' + I.swift + '</span>ConfigReader.swift</div>' +
+      '<div class="tab" style="background:var(--vs-taboff);color:var(--vs-taboffg);box-shadow:inset -1px 0 0 var(--vs-tabb)"><span style="color:var(--vs-mod)">' + I.swift + '</span>Validator.swift</div></div>' +
+      '<div class="crumb" style="background:var(--vs-cbg);color:var(--vs-cfg)">Sources › ConfigReader.swift › read(_:)</div>' +
+      '<div class="codearea">' + codeLines({ gutter: { 6: 'var(--vs-gadd)', 12: 'var(--vs-gmod)' } }) + '</div>' +
+      '<div class="panel" style="background:var(--vs-pbg);border-top:1px solid var(--vs-pb);color:var(--vs-tfg)"><div class="pt"><span style="color:var(--vs-ptoff)">PROBLEMS</span><span style="color:var(--vs-ptoff)">OUTPUT</span><span style="color:var(--vs-pton);box-shadow:0 1px 0 var(--vs-ptb)">TERMINAL</span></div>' +
+      '<div><span style="color:var(--vs-tg)">~/tinta $ </span>swift test</div><div><span style="color:var(--vs-tg)">✔ </span>ConfigReaderTests: 12 tests passed</div><div><span style="color:var(--vs-ty)">! </span>Validator.swift:8 port not checked</div></div>' +
+      '</div></div>' +
+      '<div class="sb" style="background:var(--vs-sbbg);color:var(--vs-sbfg)"><span class="rm" style="background:var(--vs-rbg);color:var(--vs-rfg)">⌥ main</span><span>⊗ 0 ⚠ 1</span><span class="sp">Ln 3, Col 16</span><span>Spaces: 4</span><span>UTF-8</span><span>Swift</span></div></div>';
+  }
+  function vsVars(e) {
+    var v = e.vs, t = e.tok, m = {
+      'vs-tbbg': 'titleBar.activeBackground', 'vs-tbfg': 'titleBar.activeForeground', 'vs-tbb': 'titleBar.border', 'vs-abg': 'activityBar.background',
+      'vs-afg': 'activityBar.foreground', 'vs-ain': 'activityBar.inactiveForeground', 'vs-actb': 'activityBar.activeBorder', 'vs-sbg': 'sideBar.background',
+      'vs-sfg': 'sideBar.foreground', 'vs-sb': 'sideBar.border', 'vs-stitle': 'sideBarTitle.foreground', 'vs-lsel': 'list.activeSelectionBackground',
+      'vs-mod': 'gitDecoration.modifiedResourceForeground', 'vs-untr': 'gitDecoration.untrackedResourceForeground', 'vs-tabsbg': 'editorGroupHeader.tabsBackground',
+      'vs-tabon': 'tab.activeBackground', 'vs-tabonfg': 'tab.activeForeground', 'vs-tabtop': 'tab.activeBorderTop', 'vs-taboff': 'tab.inactiveBackground',
+      'vs-taboffg': 'tab.inactiveForeground', 'vs-tabb': 'tab.border', 'vs-cfg': 'breadcrumb.foreground', 'vs-cbg': 'breadcrumb.background', 'vs-ebg': 'editor.background',
+      'lnhl': 'editor.lineHighlightBackground', 'lnoff': 'editorLineNumber.foreground', 'lnon': 'editorLineNumber.activeForeground', 'caret': 'editorCursor.foreground',
+      'vs-gadd': 'editorGutter.addedBackground', 'vs-gmod': 'editorGutter.modifiedBackground', 'vs-pbg': 'panel.background', 'vs-pb': 'panel.border',
+      'vs-pton': 'panelTitle.activeForeground', 'vs-ptb': 'panelTitle.activeBorder', 'vs-ptoff': 'panelTitle.inactiveForeground', 'vs-tg': 'terminal.ansiGreen',
+      'vs-ty': 'terminal.ansiYellow', 'vs-tfg': 'terminal.foreground', 'vs-sbbg': 'statusBar.background', 'vs-sbfg': 'statusBar.foreground',
+      'vs-rbg': 'statusBarItem.remoteBackground', 'vs-rfg': 'statusBarItem.remoteForeground'
+    }, o = {};
+    Object.keys(m).forEach(function (k) { o[k] = v[m[k]]; });
+    o['k-plain'] = t.foreground; o['k-kw'] = t.keyword; o['k-tdecl'] = o['k-tref'] = o['k-sys'] = t.type;
+    o['k-fdecl'] = o['k-fcall'] = o['k-fsys'] = t['function']; o['k-str'] = t.string; o['k-num'] = t.number;
+    o['k-com'] = o['k-todo'] = t.comment; o['s-com'] = o['s-todo'] = 'italic'; o['k-prop'] = o['k-param'] = t.variable; o['k-op'] = t.operator; o['k-const'] = t.constant;
+    return o;
+  }
+
+  // ---------- Xcode (its own chrome stays neutral; the source editor takes the theme)
+  function xcHTML() {
+    return '<div class="win xc" style="background:var(--xc-bg)">' +
+      '<div class="tb"><span class="tl mute"><i></i><i></i><i></i></span><span style="opacity:.75">' + I.play + '</span><span>Tinta › My Mac</span><span class="mid">Build Succeeded</span></div>' +
+      '<div class="body"><div class="xnav">' +
+      '<div><span style="color:#5AA6FF">' + I.folder + '</span>Tinta</div><div class="ind"><span style="color:#5AA6FF">' + I.folder + '</span>Sources</div>' +
+      '<div class="ind on"><span style="color:#fff">' + I.swift + '</span>ConfigReader.swift</div><div class="ind"><span style="color:#F0883E">' + I.swift + '</span>Validator.swift</div>' +
+      '<div class="ind"><span style="color:#F0883E">' + I.swift + '</span>Parser.swift</div><div class="ind"><span style="color:#5AA6FF">' + I.folder + '</span>Tests</div></div>' +
+      '<div class="ed"><div class="ftab"><span style="color:#F0883E">' + I.swift + '</span>ConfigReader.swift</div>' +
+      '<div class="codearea">' + codeLines({ sel: true, caretAfterSel: true }) + '</div>' +
+      '<div class="cons" style="background:var(--xc-cbg)"><div style="color:var(--xc-cout)">Ready: 64000</div><div style="color:var(--xc-cprompt)">(lldb) </div></div></div></div></div>';
+  }
+  function xcVars(e) {
+    var x = e.xc, o = { 'xc-bg': x.bg, lnhl: x.line, 'xc-sel': x.sel, caret: x.caret, 'xc-cbg': x.cbg, 'xc-cout': x.cout, 'xc-cprompt': x.cprompt,
+      lnoff: al(x.plain, .4), lnon: al(x.plain, .9) };
+    o['k-plain'] = o['k-param'] = o['k-op'] = x.plain; o['k-kw'] = x.kw; o['w-kw'] = '700'; o['k-tdecl'] = x.tdecl; o['k-tref'] = x.tref; o['k-sys'] = x.sys;
+    o['k-fdecl'] = x.fdecl; o['k-fcall'] = x.fcall; o['k-fsys'] = x.fsys; o['k-str'] = x.str; o['k-num'] = x.num; o['k-com'] = x.com; o['k-todo'] = x.mark;
+    o['w-todo'] = '700'; o['k-prop'] = x.prop; o['k-const'] = x['const']; o['s-com'] = o['s-todo'] = 'normal';
+    return o;
+  }
+
+  // ---------- JetBrains IDE with the companion plugin (interface colours too)
+  function jbHTML() {
+    return '<div class="win jb" style="background:var(--jb-ebg)">' +
+      '<div class="tb" style="background:var(--jb-tbbg);color:var(--jb-tbfg);border-bottom:1px solid var(--jb-border)"><span class="tl"><i></i><i></i><i></i></span><b style="margin-left:.6em">tinta</b><span style="opacity:.7">main ⌄</span><span class="sp" style="opacity:.7">' + I.hammer + '</span><span style="color:var(--jb-run)">' + I.play + '</span></div>' +
+      '<div class="body"><div class="stripe" style="background:var(--jb-stbg);color:var(--jb-stfg);border-right:1px solid var(--jb-border)"><span style="color:var(--jb-ston)">' + I.folder + '</span>' + I.branch + I.term + I.warn + '</div>' +
+      '<div class="tree" style="background:var(--jb-trbg);color:var(--jb-tbfg);border-right:1px solid var(--jb-border)"><div class="h">Project</div><div>⌄ tinta</div><div style="padding-left:1.6em">⌄ Sources</div>' +
+      '<div style="padding-left:2.8em;background:var(--jb-trsel)">ConfigReader.swift</div><div style="padding-left:2.8em">Validator.swift</div><div style="padding-left:1.6em">› Tests</div></div>' +
+      '<div class="ed"><div class="tabs" style="background:var(--jb-tabsbg);border-bottom:1px solid var(--jb-border)"><div class="tab on" style="background:var(--jb-tabon);color:var(--jb-tbfg)">ConfigReader.swift</div><div class="tab" style="color:var(--jb-taboff)">Validator.swift</div></div>' +
+      '<div class="codearea" style="background:var(--jb-ebg)">' + codeLines({ warn: true, gutter: { 6: 'var(--jb-add)', 12: 'var(--jb-modl)' } }) + '</div>' +
+      '<div class="pop" style="background:var(--jb-pop);color:var(--jb-tbfg);box-shadow:0 0 0 1px var(--jb-border),0 .6em 1.6em #00000080"><div style="background:var(--jb-psel)"><b style="color:var(--jb-match)">max</b>Size</div><div><b style="color:var(--jb-match)">max</b>(_:)</div><div><b style="color:var(--jb-match)">max</b>(by:)</div></div></div></div>' +
+      '<div class="sb" style="background:var(--jb-sbbg);color:var(--jb-sbfg);border-top:1px solid var(--jb-border)"><span>tinta › Sources › ConfigReader.swift</span><span class="sp">3:16</span><span>LF</span><span>UTF-8</span><span>4 spaces</span></div></div>';
+  }
+  function jbVars(e) {
+    var a = e.ja, c = e.jc, u = e.ju, o = {
+      'jb-ebg': e.tok.background, lnhl: c.caretRow, lnoff: c.ln, lnon: c.lnCaret, caret: c.caret, 'jb-add': c.added, 'jb-modl': c.modified,
+      'jb-tbbg': u['MainToolbar.background'], 'jb-tbfg': u['MainToolbar.foreground'], 'jb-stbg': u['ToolWindow.Stripe.background'], 'jb-stfg': u['ToolWindow.Stripe.foreground'],
+      'jb-ston': u['ToolWindow.Stripe.selectedForeground'], 'jb-trbg': u['Tree.background'], 'jb-trsel': u['Tree.selectionBackground'], 'jb-tabsbg': u['EditorTabs.background'],
+      'jb-tabon': u['EditorTabs.selectedBackground'], 'jb-ul': u['EditorTabs.underlineColor'], 'jb-taboff': u['EditorTabs.inactiveForeground'], 'jb-sbbg': u['StatusBar.background'],
+      'jb-sbfg': u['StatusBar.foreground'], 'jb-border': u['Borders.color'], 'jb-run': u['Run.icon'], 'jb-pop': u['Popup.background'], 'jb-psel': u['List.selectionBackground'],
+      'jb-match': u['CompletionPopup.matchForeground'], 'jb-warn': e.term.warning
+    };
+    Object.keys(a).forEach(function (k) {
+      o['k-' + k] = a[k][0];
+      var f = a[k][1];
+      o['s-' + k] = f === 2 || f === 3 ? 'italic' : 'normal';
+      o['w-' + k] = f === 1 || f === 3 ? '700' : '400';
+    });
+    o['k-sys'] = a.tref[0]; o['k-fsys'] = a.fcall[0]; o['s-fsys'] = o['s-fcall'] || 'normal';
+    return o;
+  }
+
+  // ---------- Terminal: zsh prompt, ls, git and a test run (the app's TerminalSample)
+  function tmHTML() {
+    var t = function (s, c, b) { return '<span style="color:var(--t-' + c + ')' + (b ? ';font-weight:700' : '') + '">' + esc(s) + '</span>'; };
+    var prompt = function (cmd) { return t('gabriele', 'acc', 1) + t(' ~/projects/tinta', 'acc2') + t(' main', 'user') + t('*', 'warn') + t(' ❯ ', 'acc', 1) + cmd; };
+    var L = [
+      prompt(t('ls', 'fg') + t(' -F', 'a6')),
+      t('Package.swift  README.md  ', 'fg') + t('Sources/', 'a4', 1) + '  ' + t('Tests/', 'a4', 1) + '  ' + t('build.sh*', 'a5', 1) + '  ' + t('docs@', 'a6'),
+      prompt(t('git status', 'fg')),
+      t('On branch main', 'fg'),
+      t('Changes to be committed:', 'fg'),
+      t('        new file:   Sources/Terminal.swift', 'a2'),
+      t('Changes not staged for commit:', 'fg'),
+      t('        modified:   Sources/App.swift', 'a1'),
+      prompt(t('swift test', 'fg') + t(' --parallel', 'a6')),
+      t('[1/3] Compiling Tinta TerminalColors.swift', 'muted'),
+      t('✔ ', 'ok', 1) + t('ansiPaletteReadable', 'fg') + t(' (0.004s)', 'muted'),
+      t('✔ ', 'ok', 1) + t('installRoundTrip', 'fg') + t(' (0.012s)', 'muted'),
+      t('✘ ', 'err', 1) + t('legacyProfileImport', 'fg') + t(' — expected "Tinta", got nil', 'err'),
+      t('warning: ', 'warn', 1) + t('1 test skipped on this Mac', 'fg'),
+      t('Executed 3 tests, with ', 'fg') + t('1 failure', 'err', 1) + t(' in 0.031s', 'muted'),
+      prompt(t('git commit', 'fg') + t(' -m "Terminal colors"', 'muted')) + '<span class="cursor" style="background:var(--t-cur);display:inline-block;width:.6em;height:1.1em;vertical-align:-.15em;margin-left:.2em"></span>'
+    ];
+    return '<div class="win tm" style="background:var(--t-bg);color:var(--t-fg)"><div class="tb" style="background:var(--t-bar);color:var(--t-muted);border-bottom:1px solid var(--t-border)"><span class="tl"><i></i><i></i><i></i></span>tinta — zsh — 96×28</div><div class="screen">' +
+      L.map(function (l) { return '<div>' + l + '</div>'; }).join('') + '</div></div>';
+  }
+  function mix(a, b, t) {
+    var p = function (h, i) { return parseInt(h.slice(1 + i * 2, 3 + i * 2), 16); };
+    return '#' + [0, 1, 2].map(function (i) { return Math.round(p(a, i) + (p(b, i) - p(a, i)) * t).toString(16).padStart(2, '0'); }).join('');
+  }
+  function tmVars(e) {
+    var c = e.term;
+    var o = { 't-bg': c.background, 't-fg': c.foreground, 't-acc': c.accent, 't-acc2': c.accent2, 't-user': c.user, 't-warn': c.warning, 't-ok': c.success,
+      't-err': c.error, 't-muted': c.muted, 't-border': c.border, 't-cur': c.cursor, 't-bar': mix(c.background, c.foreground, .07) };
+    c.ansi.forEach(function (h, i) { o['t-a' + i] = h; });
+    return o;
+  }
+
+  // ---------- Claude Code tab (same values as the app's previews)
+  function wave(p, style) {
+    var id = 'w' + Math.random().toString(36).slice(2, 7), W = 96, H = 20, k = p.sig.wave;
+    var stops = p.wave.map(function (c, i) { return '<stop offset="' + (i / (p.wave.length - 1)) + '" stop-color="' + c + '"/>'; }).join('');
+    var defs = '<defs><linearGradient id="' + id + '" x1="0" x2="1">' + stops + '</linearGradient><filter id="' + id + 'b"><feGaussianBlur stdDeviation="1.2"/></filter></defs>';
+    var svg = function (inner, extra) { return '<svg viewBox="0 0 ' + W + ' ' + H + '" ' + (extra || '') + '>' + defs + inner + '</svg>'; };
+    if (style === 'minimal') return '<svg viewBox="0 0 14 14" style="width:1em;height:1em"><circle cx="7" cy="7" r="4" fill="' + p.claude[0] + '"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle></svg>';
+    var sine = function (ph, amp, sw, extra) {
+      var d = ''; for (var x = 0; x <= W; x += 2) d += (x ? 'L' : 'M') + x + ' ' + (H / 2 + Math.sin(x / 9 + ph) * amp).toFixed(1) + ' ';
+      return '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="' + sw + '" stroke-linecap="round" ' + (extra || '') + '><animateTransform attributeName="transform" type="translate" values="0 0;-18 0;0 0" dur="2.4s" repeatCount="indefinite"/></path>';
+    };
+    if (style === 'outline') return svg(sine(0, 5, 1.5));
+    if (style === 'solid') {
+      var bars = ''; for (var i = 0; i < 16; i++) { var h = 4 + (i * 7 % 11), h2 = 16 - h % 10, dur = (1 + (i % 4) * .25) + 's';
+        bars += '<rect x="' + (i * 6) + '" y="' + ((H - h) / 2) + '" width="3.4" height="' + h + '" rx="1.7" fill="url(#' + id + ')"><animate attributeName="height" values="' + h + ';' + h2 + ';' + h + '" dur="' + dur + '" repeatCount="indefinite"/><animate attributeName="y" values="' + ((H - h) / 2) + ';' + ((H - h2) / 2) + ';' + ((H - h) / 2) + '" dur="' + dur + '" repeatCount="indefinite"/></rect>'; }
+      return svg(bars);
+    }
+    if (k === 'rain') {
+      var g = 'ｱｲｳｴｵｶｷ01ﾀﾁﾂ7ﾅﾆ9', cols = '';
+      for (var j = 0; j < 12; j++) { var tx = ''; for (var q = 0; q < 5; q++) tx += '<tspan x="' + (j * 8 + 2) + '" dy="7">' + g[(j * 3 + q * 5) % g.length] + '</tspan>';
+        cols += '<text font-size="7" font-family="ui-monospace,Menlo,monospace" fill="' + p.wave[j % p.wave.length] + '" y="-36">' + tx + '<animateTransform attributeName="transform" type="translate" values="0 0;0 60" dur="' + (0.9 + (j % 5) * .3).toFixed(2) + 's" begin="-' + (j * .37 % 1).toFixed(2) + 's" repeatCount="indefinite"/></text>'; }
+      return svg(cols, 'style="background:' + al(p.ink, .6) + ';border-radius:4px"');
+    }
+    if (k === 'log') {
+      var lines = ['[ok] scanning', '[ok] indexing', '[..] patching', '[ok] tests'];
+      return svg('<g font-family="ui-monospace,Menlo,monospace" font-size="8">' + lines.map(function (l, i) { return '<text x="2" y="' + (13 + i * 11) + '" fill="' + (i % 2 ? p.wave[2] : p.wave[0]) + '">' + l + '</text>'; }).join('') + '<animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -11;0 -11;0 -22;0 -22;0 -33" keyTimes="0;.15;.25;.45;.55;.8;1" dur="3s" repeatCount="indefinite"/></g>');
+    }
+    if (k === 'sparkle') {
+      var st = ''; for (var s = 0; s < 9; s++) { var x0 = 6 + s * 10.5, y0 = 4 + (s * 7 % 12), r = 1.6 + (s % 3) * .7;
+        st += '<path d="M' + x0 + ' ' + (y0 - r * 2) + 'L' + (x0 + r * .5) + ' ' + (y0 - r * .5) + 'L' + (x0 + r * 2) + ' ' + y0 + 'L' + (x0 + r * .5) + ' ' + (y0 + r * .5) + 'L' + x0 + ' ' + (y0 + r * 2) + 'L' + (x0 - r * .5) + ' ' + (y0 + r * .5) + 'L' + (x0 - r * 2) + ' ' + y0 + 'L' + (x0 - r * .5) + ' ' + (y0 - r * .5) + 'Z" fill="' + p.wave[s % p.wave.length] + '"><animate attributeName="opacity" values="0;1;0" dur="' + (1.2 + (s % 4) * .35) + 's" begin="-' + (s * .29 % 1).toFixed(2) + 's" repeatCount="indefinite"/></path>'; }
+      return svg(sine(0, 3, 1.4, 'opacity=".55"') + st);
+    }
+    if (k === 'curtain') {
+      var v = ''; p.wave.forEach(function (c, i) { v += '<rect x="' + (8 + i * 22) + '" y="0" width="16" height="' + H + '" rx="8" fill="' + c + '" opacity=".55" filter="url(#' + id + 'b)"><animate attributeName="x" values="' + (8 + i * 22) + ';' + (14 + i * 22) + ';' + (8 + i * 22) + '" dur="' + (3 + i) + 's" repeatCount="indefinite"/><animate attributeName="opacity" values=".25;.75;.25" dur="' + (2.5 + i * .7) + 's" repeatCount="indefinite"/></rect>'; });
+      return svg(v);
+    }
+    if (k === 'scanline') return svg('<rect x="0" y="9.5" width="' + W + '" height="1" fill="' + p.wave[2] + '"/><rect x="-30" y="7" width="30" height="6" rx="3" fill="url(#' + id + ')" filter="url(#' + id + 'b)"><animate attributeName="x" values="-30;' + W + ';-30" dur="2.2s" repeatCount="indefinite"/></rect>');
+    if (k === 'breath') return svg('<g>' + sine(0, 4, 3) + '<animateTransform attributeName="transform" type="scale" additive="sum" values="1 .4;1 1.1;1 .4" dur="4s" repeatCount="indefinite"/></g>');
+    if (k === 'flicker') return svg(sine(0, 6, 2, 'filter="drop-shadow(0 0 3px ' + p.wave[0] + ')"') + sine(2, 4, 1.2, 'opacity=".7"'), 'style="animation:flicker 3s infinite"');
+    if (k === 'refraction') return svg(sine(0, 5, 2.4, 'opacity=".9"') + sine(1.4, 3, 1, 'opacity=".5"') + sine(2.8, 6, 6, 'opacity=".18" filter="url(#' + id + 'b)"'));
+    if (k === 'ink-line') return svg('<path d="M2 12 C 20 4, 30 16, 48 10 S 80 6, 94 11" fill="none" stroke="url(#' + id + ')" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="120" stroke-dashoffset="120"><animate attributeName="stroke-dashoffset" values="120;0;0;-120" dur="3s" repeatCount="indefinite"/></path>');
+    return svg(sine(0, 6, 5, 'opacity=".35" filter="url(#' + id + 'b)"') + sine(0, 6, 2) + sine(1.6, 4, 1.2, 'opacity=".6"'));
+  }
+  function mesh(cols, strength, base, baseA) {
+    var pos = ['85% 15%', '12% 90%', '65% 95%', '10% 10%'], w = [.425, .275, .175, .175];
+    return cols.map(function (c, i) { return 'radial-gradient(60% 90% at ' + pos[i] + ', ' + al(c, w[i] * strength * 1.25) + ', transparent 70%)'; }).join(', ') + ', ' + al(base, baseA);
+  }
+  var person = function (c) { return '<svg class="av" viewBox="0 0 18 18" fill="none" stroke="' + c + '" stroke-width="1.5"><circle cx="9" cy="6.2" r="3"/><path d="M3.5 16c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" stroke-linecap="round"/></svg>'; };
+  var spark = function (c) { return '<span class="av" style="color:' + c + '" aria-hidden="true">✻</span>'; };
+  var wrench = function (c) { return '<svg style="width:.8em;height:.8em" viewBox="0 0 16 16" fill="none" stroke="' + c + '" stroke-width="1.8" stroke-linecap="round"><path d="M10.5 2.5a3.5 3.5 0 0 0-3.3 4.7L2.5 11.9a1.2 1.2 0 0 0 1.6 1.6l4.7-4.7a3.5 3.5 0 0 0 4.7-3.3l-2 2-1.8-.4-.4-1.8z"/></svg>'; };
+  function ccHTML(p, sid) {
+    var c = p.claude, u = p.user, st = p.styles[sid] || {};
+    var serif = p.id === 'avorio', root = p.id === 'root';
+    var lblFont = p.mono ? 'font-family:var(--mono);' : serif ? 'font-family:\'New York\',Georgia,serif;font-variant:small-caps;letter-spacing:.14em;' : '';
+    var headFont = p.mono ? 'font-family:var(--mono);' : serif ? 'font-family:\'New York\',\'Iowan Old Style\',Georgia,serif;font-weight:600;' : '';
+    var time = function (col) { return '<span class="time" style="color:' + col + '">10:42</span>'; };
+    var cName = root ? esc(p.clabel) + '<span class="cursor">_</span>' : p.mono ? '&gt; CLAUDE<span class="cursor">_</span>' : 'CLAUDE';
+    var uName = root ? 'you@local:~$<span class="cursor">_</span>' : p.mono ? '&gt; YOU<span class="cursor">_</span>' : 'YOU';
+    var labelGrad = lg(p.label), uLabel, cLabel, uBubble = '', cBubble = '', tileStyle, head, codeHead, rowRing = '';
+    if (sid === 'minimal') {
+      uLabel = time(p.muted) + '<span>·</span><span style="color:' + u[0] + ';' + lblFont + '">' + uName + '</span>' + person(u[0]);
+      cLabel = spark(c[0]) + '<span style="color:' + c[0] + ';' + lblFont + '">' + cName + '</span><span>·</span>' + time(p.muted);
+      cBubble = 'padding:0;'; tileStyle = 'background:transparent;'; head = 'color:' + c[0] + ';';
+      codeHead = 'background:transparent;color:#9A9A9A;padding-left:0';
+    } else if (sid === 'outline') {
+      uLabel = time(p.muted) + '<span>·</span><span class="chipl" style="color:' + u[0] + ';box-shadow:inset 0 0 0 1px ' + al(u[0], .45) + ';' + lblFont + '">' + uName + '</span>' + person(u[0]);
+      cLabel = spark(c[0]) + '<span style="color:' + c[0] + ';' + lblFont + '">' + cName + '</span><span>·</span>' + time(p.muted);
+      uBubble = 'box-shadow:inset 0 0 0 1px ' + al(u[0], .25) + ';'; cBubble = 'box-shadow:inset 0 0 0 1px ' + al(c[0], .25) + ';';
+      tileStyle = 'box-shadow:inset 0 0 0 1px ' + al(c[0], .45) + ';'; rowRing = 'box-shadow:inset 0 0 0 1px ' + al(c[0], .25) + ';';
+      head = 'color:' + c[0] + ';border-bottom:1px solid ' + al(c[0], .25) + ';padding-bottom:2px;';
+      codeHead = 'background:transparent;box-shadow:inset 0 0 0 1px ' + al(c[0], .25) + ';border-radius:.7em .7em 0 0;color:' + c[0];
+    } else if (sid === 'solid') {
+      uLabel = time(p.muted) + '<span>·</span><span class="chipl" style="background:' + al(u[0], .28) + ';color:' + u[0] + ';' + lblFont + '">' + uName + '</span>' + person(u[0]);
+      cLabel = spark(c[0]) + '<span style="' + gradText(labelGrad) + lblFont + '">' + cName + '</span><span>·</span>' + time(p.muted);
+      uBubble = 'background:var(--ov), ' + al(p.ubase, .48) + ';'; cBubble = 'background:' + al(p.id === 'noir' ? c[2] : c[1], p.veil == null ? .2 : p.veil) + ';';
+      tileStyle = 'background:' + al(c[0], .18) + ';'; rowRing = 'background:' + al(c[0], .07) + ';';
+      head = gradText(labelGrad); codeHead = 'background:' + al(c[0], .16) + ';color:' + c[0];
+    } else {
+      var uo = st.userGlowOpacity == null ? .7 : st.userGlowOpacity;
+      uLabel = time(p.muted) + '<span>·</span><span class="chipl" style="background:' + lg([al(u[0], .3), al(u[1], .3)]) + ';color:' + u[0] + ';' + lblFont + '">' + uName + '</span>' + person(u[0]);
+      var glow = p.id === 'tinta' ? '' : 'filter:drop-shadow(0 0 6px ' + al(c[0], .6) + ');';
+      var flick = p.sig.label === 'tube-glow' ? 'animation:flicker 4s infinite;' : '';
+      cLabel = spark(c[0]) + '<span style="' + gradText(labelGrad) + glow + flick + lblFont + '">' + cName + '</span><span>·</span>' + time(p.muted);
+      uBubble = 'background:var(--ov), ' + mesh(p.umesh, uo / .7 * .9, p.ubase, .5 * uo) + ';';
+      cBubble = 'background:' + mesh(p.cmesh, (st.meshStrength || 1) * .6, p.veil ? p.cmesh[0] : c[0], p.veil == null ? .09 : p.veil) + ';box-shadow:0 14px 18px -12px ' + al(c[1], .45) + ';';
+      tileStyle = 'background:' + al(c[0], .2) + ';box-shadow:0 0 10px ' + al(c[0], .5) + ';';
+      var hg = lg(p.heading), eff = p.sig.heading;
+      head = eff === 'gradient-drift' ? 'background:' + lg(p.heading.concat([p.heading[0]])) + ';background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:drift 6s linear infinite;'
+        : eff === 'glitter' ? 'background:linear-gradient(100deg, transparent 35%, #FFFFFFCC 50%, transparent 65%), ' + lg(p.heading.concat([p.heading[0]])) + ';background-size:250% 100%, 200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 3.5s ease-in-out infinite;'
+        : eff === 'silver-cut' ? 'background:linear-gradient(100deg, ' + p.heading[2] + ' 30%, #FFFFFF 50%, ' + p.heading[2] + ' 70%), ' + hg + ';background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 4s ease-in-out infinite;'
+        : eff === 'neon-tube' ? 'color:' + p.heading[0] + ';text-shadow:0 0 4px ' + p.heading[0] + ', 0 0 12px ' + p.heading[2] + ', 0 0 22px ' + al(p.heading[1], .6) + ';'
+        : eff === 'frost' ? gradText(hg) + 'filter:drop-shadow(0 0 8px ' + al(c[2], .45) + ');'
+        : gradText(hg) + 'filter:drop-shadow(0 0 10px ' + al(c[1], .35) + ');';
+      codeHead = 'background:linear-gradient(90deg, ' + al(c[1], .22) + ', ' + al(c[3], .12) + ');color:' + c[2] + ';' + (p.sig.codeHeader === 'glass' ? 'box-shadow:inset 0 1px 0 #ffffff30;' : '');
+    }
+    var dots = sid === 'minimal' ? '' : [c[0], p.cool, c[2]].map(function (d) { return sid === 'outline' ? '<i class="dot" style="box-shadow:inset 0 0 0 1.2px ' + d + '"></i>' : '<i class="dot" style="background:' + d + ';' + (sid === 'sfumature' ? 'box-shadow:0 0 6px ' + d : '') + '"></i>'; }).join('');
+    var diff = [p.success, p.success, p.success, p.danger, '#5A5A5A'].map(function (x) { return '<i style="background:' + x + '"></i>'; }).join('');
+    var codeLinesTs = '<span class="k">export function</span> <span class="f">parse</span>(src: <span class="k">string</span>) {\n  <span class="k">if</span> (!src) <span class="k">return</span> <span class="s">\'\'</span>\n  <span class="k">return</span> src.<span class="f">trim</span>()  <span class="c">// empty strings</span>\n}';
+    var spinWord = (p.mono && !root ? '&gt; ' : '') + esc(p.spin) + (sid === 'minimal' ? '…' : ' · 12s');
+    return '<div class="win cc"><div class="tb"><b>Claude Code</b><span class="chip2">Code</span><span style="margin-left:auto">desktop app</span></div><div class="chat">' +
+      '<div class="row u"><div class="lbl" style="color:' + p.muted + '">' + uLabel + '</div><div class="ububble" style="' + uBubble + '">Can you fix the parser for empty strings?</div></div>' +
+      '<div class="row"><div class="lbl" style="color:' + p.muted + '">' + cLabel + '</div><div class="cbubble" style="' + cBubble + '">Done: <code style="font-family:var(--mono)">parse()</code> now returns an empty string instead of throwing an error.</div></div>' +
+      '<div class="tool" style="' + rowRing + '"><span class="tile" style="' + tileStyle + (root ? 'color:' + c[0] + ';font-weight:700' : '') + '">' + (root ? '$' : wrench(c[0])) + '</span><span>' + (root ? 'npm test <span style="color:#ECECEC">src/parser.ts</span>' : 'Edit <span style="color:#ECECEC">src/parser.ts</span> +12 −3') + '</span>' + (root ? '<span class="mono" style="color:' + p.success + ';font-weight:700">[OK]</span>' : '<span class="diff">' + diff + '</span>') + '</div>' +
+      '<div class="h' + (p.mono ? ' mono' : '') + '" style="' + headFont + head + '">Check result</div>' +
+      '<div class="codew"><div class="head" style="' + codeHead + '">' + dots + '<span class="lang" style="background:' + al(c[0], sid === 'outline' || sid === 'minimal' ? 0 : .2) + ';' + (sid === 'outline' ? 'box-shadow:inset 0 0 0 1px ' + al(c[0], .35) + ';' : '') + 'color:' + c[0] + '">TS</span><span class="file">src/parser.ts</span></div><pre>' + codeLinesTs + '</pre></div>' +
+      '<div class="spin">' + wave(p, sid) + '<span>' + spinWord + '</span></div>' +
+      '<div class="input" style="margin-top:auto">Describe a task or ask a question…<div><span>+</span><span>Ask before edits</span><i style="background:' + c[0] + '">↑</i></div></div></div></div>';
+  }
+
+  // ---------- wiring
+  var mocks = { vs: [vsHTML, vsVars], xc: [xcHTML, xcVars], jb: [jbHTML, jbVars], tm: [tmHTML, tmVars] };
+  Object.keys(mocks).forEach(function (k) { var el = $('#m-' + k); if (el) el.innerHTML = mocks[k][0](); });
+  function setVars(el, o) { Object.keys(o).forEach(function (k) { el.style.setProperty('--' + k, o[k]); }); }
+
+  var pbox = $('#pals');
+  pbox.innerHTML = P.map(function (p) {
+    return '<button class="pbtn" type="button" data-p="' + p.id + '" aria-pressed="false"><span class="sw" style="background:conic-gradient(from 200deg, ' + p.claude.concat([p.user[0], p.claude[0]]).join(', ') + ')"></span>' + esc(p.name) + (p.id === 'salvia' ? '<span class="free">Free</span>' : '') + '</button>';
+  }).join('') + '<span class="pmore">+ more in the gallery<small>New themes added regularly</small></span>';
+  var sbox = $('#styles');
+  sbox.innerHTML = STYLES.map(function (s) { return '<button type="button" data-s="' + s[0] + '" aria-pressed="false">' + s[1] + '</button>'; }).join('');
+
+  function apply() {
+    var p = byId[state.pal], e = p.ed[p.edKey[state.style]];
+    var root = document.documentElement.style;
+    root.setProperty('--c1', p.claude[0]); root.setProperty('--c2', p.label[1] || p.claude[3] || p.claude[1]);
+    root.setProperty('--c3', p.claude[2]); root.setProperty('--c4', p.user[0]);
+    Object.keys(mocks).forEach(function (k) { var el = $('#m-' + k); if (el) setVars(el, mocks[k][1](e)); });
+    var cc = $('#m-cc'); if (cc) { cc.innerHTML = ccHTML(p, state.style); if (reduce) $$('svg', cc).forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); }); }
+    $$('.pbtn', pbox).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.p === state.pal)); });
+    $$('button', sbox).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.s === state.style)); });
+    $('#scap').textContent = CAPS[state.style] || '';
+    $('#pi-name').textContent = p.name;
+    $('#pi-tag').textContent = p.tagline;
+    $('#pi-chips').innerHTML = p.claude.concat(p.user.slice(0, 2)).map(function (c) { return '<i style="background:' + c + '"></i>'; }).join('');
+    var free = p.id === 'salvia';
+    $('#pi-badge').className = 'badge ' + (free ? 'free' : 'pro');
+    $('#pi-badge').textContent = free ? 'Free' : 'Tinta Pro';
+    $('#pi-note').textContent = free ? 'Included in the free app, in every style.' : 'Preview it for free in the app. Unlock with Tinta Pro.';
+  }
+  var touched = pinned;
+  pbox.addEventListener('click', function (ev) { var b = ev.target.closest('.pbtn'); if (!b) return; touched = true; state.pal = b.dataset.p; apply(); });
+  sbox.addEventListener('click', function (ev) { var b = ev.target.closest('button'); if (!b) return; touched = true; state.style = b.dataset.s; apply(); });
+  apply();
+
+  // Until the visitor picks one, the palettes take turns while the previews are on screen.
+  if (!reduce && 'IntersectionObserver' in window) {
+    var live = $('#live'), visible = false, hover = false;
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }, { threshold: .25 }).observe(live);
+    live.addEventListener('pointerenter', function () { hover = true; });
+    live.addEventListener('pointerleave', function () { hover = false; });
+    setInterval(function () {
+      if (touched || !visible || hover || document.hidden) return;
+      var i = P.findIndex(function (p) { return p.id === state.pal; });
+      state.pal = P[(i + 1) % P.length].id; apply();
+    }, 3600);
+  }
+
+  // App tour
+  var tt = $('#tour-tabs');
+  if (tt) tt.addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    $$('button', tt).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    $$('#tour picture').forEach(function (pic) {
+      var on = pic.dataset.k === b.dataset.k;
+      if (on) { var im = $('img', pic); if (im.loading === 'lazy') im.loading = 'eager'; }
+      pic.classList.toggle('on', on);
+    });
+  });
+  // The other screens of the tour load once the page is idle, so switching tabs is instant.
+  window.addEventListener('load', function () {
+    setTimeout(function () { $$('#tour img').forEach(function (im) { if (im.loading === 'lazy') im.loading = 'eager'; }); }, 1200);
+  });
+
+  // Hero window settles flat, sections fade in.
+  var win = $('.hero .appwin');
+  if (win) requestAnimationFrame(function () { setTimeout(function () { win.classList.add('flat'); }, 250); });
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (el) { io.observe(el); });
+  } else {
+    $$('.rv').forEach(function (el) { el.classList.add('in'); });
+  }
 })();
 </script>
 </body>
