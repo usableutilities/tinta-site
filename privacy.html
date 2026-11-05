@@ -417,7 +417,16 @@ section.block { padding-top: 88px; }
 .marquee ul { width: auto; flex-wrap: wrap; justify-content: center; }
 .marquee ul li[aria-hidden] { display: none; }
 .marquee { mask-image: none; -webkit-mask-image: none; }
-}</style>
+}
+.os { font: 600 10.5px/1 var(--font); font-style: normal; letter-spacing: .04em; color: var(--muted); background: #FFFFFF10; box-shadow: inset 0 0 0 1px var(--line); padding: 3px 6px; border-radius: 6px; margin-left: 8px; vertical-align: 2px; }
+.pv header .os { margin-left: 0; }
+.btn.soon { cursor: default; opacity: .85; flex-direction: row; }
+.btn.soon small { font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; color: var(--c4); margin-left: 4px; padding: 2px 7px; border-radius: 99px; background: #FFFFFF10; }
+.btn.soon:hover { transform: none; background: var(--card2); }
+.tryit { margin: 14px 0 0; font-size: 14.5px; } .tryit a { color: var(--muted); text-decoration: none; } .tryit a:hover { color: var(--fg); }
+.final .cta { margin-top: 0; }
+.plan .btns { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
+.plan .btns .btn { margin-top: 0; }</style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -431,10 +440,10 @@ section.block { padding-top: 88px; }
 <div class="doc-hero"><div class="aura" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap doc">
 <section data-lang="en">
   <h1>Privacy Policy</h1>
-  <p class="fine">Last updated: November 4, 2026</p>
+  <p class="fine">Last updated: November 5, 2026</p>
   <p class="lead">Short version: no account, no advertising, no tracking. Tinta sends only anonymous usage statistics, which you can turn off in Settings.</p>
   <h2>Anonymous usage statistics</h2>
-  <p>To learn which features are used and what to improve, Tinta – Code Themes (&ldquo;Tinta&rdquo;, &ldquo;the app&rdquo;) sends anonymous events through <strong>Aptabase</strong>, a privacy-focused analytics service. An event says what happened in the app (for example &ldquo;app opened&rdquo;, &ldquo;palette previewed&rdquo;, &ldquo;theme applied to an editor type&rdquo;) together with technical context: app version, macOS version, interface language and a random session number that changes every session.</p>
+  <p>To learn which features are used and what to improve, Tinta – Code Themes (&ldquo;Tinta&rdquo;, &ldquo;the app&rdquo;) sends anonymous events through <strong>Aptabase</strong>, a privacy-focused analytics service. An event says what happened in the app (for example &ldquo;app opened&rdquo;, &ldquo;palette previewed&rdquo;, &ldquo;theme applied to an editor type&rdquo;) together with technical context: app version, operating system (macOS or Windows) and its version, interface language and a random session number that changes every session.</p>
   <ul>
     <li>No name, email, account, file names, folder paths, file contents, code or theme contents are sent.</li>
     <li>No advertising, device or hardware identifier is collected. Aptabase uses your IP address and user agent only in memory to derive the country/region and a pseudonymous identifier that rotates every 24 hours; the IP address is never stored.</li>
@@ -443,15 +452,16 @@ section.block { padding-top: 88px; }
     <li><strong>Opt out:</strong> turn off &ldquo;Invia statistiche anonime&rdquo; (Send anonymous statistics) in Tinta &rsaquo; Settings. From then on no event is sent.</li>
     <li>Legal basis (GDPR): our legitimate interest in improving the app (Art. 6(1)(f)), balanced by the anonymity of the data and the opt-out.</li>
   </ul>
-  <p>The App Store privacy label lists &ldquo;Usage Data &ndash; Product Interaction&rdquo; and &ldquo;Coarse Location&rdquo; for analytics, not linked to you and not used to track you.</p>
-  <h2>What stays on your Mac</h2>
+  <p>This applies to Tinta for Mac and Tinta for Windows alike. The App Store privacy label lists &ldquo;Usage Data &ndash; Product Interaction&rdquo; and &ldquo;Coarse Location&rdquo; for analytics, not linked to you and not used to track you.</p>
+  <h2>What stays on your computer</h2>
   <ul>
-    <li>Your themes, preferences and the list of linked editors are saved locally, inside the app's sandbox container.</li>
-    <li>When you link an editor, macOS asks you to choose its folder. Tinta keeps a security-scoped bookmark to that folder only, and uses it only to write theme and settings files (colors) there. Before changing a settings file, Tinta saves a backup copy next to it. &ldquo;Unlink&rdquo; removes what Tinta added, restores the backups and deletes the bookmark.</li>
-    <li>To show whether an editor is linked, Tinta reads the relevant settings files in the folders you granted. Their content never leaves your Mac.</li>
+    <li>Your themes, preferences and the list of linked editors are saved locally: on a Mac inside the app's sandbox container, on Windows in the app's own data folder.</li>
+    <li>On a Mac, when you link an editor, macOS asks you to choose its folder. Tinta keeps a security-scoped bookmark to that folder only, and uses it only to write theme and settings files (colors) there. Before changing a settings file, Tinta saves a backup copy next to it. &ldquo;Unlink&rdquo; removes what Tinta added, restores the backups and deletes the bookmark.</li>
+    <li>On Windows, linking an editor lets Tinta write its theme and settings files (colors) in that editor's folders in your user profile. Tinta records what it changes in its own data folder, and &ldquo;Unlink&rdquo; puts every file back as it was.</li>
+    <li>To show whether an editor is linked, Tinta reads the relevant settings files in the folders you granted (on Windows, in the linked editors' folders). Their content never leaves your computer.</li>
   </ul>
   <h2>Network</h2>
-  <p>Tinta connects to the internet only to send the anonymous statistics described above (unless you turn them off) and through Apple's StoreKit, used by macOS to show prices and process in-app purchases, if any; Apple handles that data under its own privacy policy. Tinta never sees your payment details. Tinta downloads nothing else.</p>
+  <p>Tinta connects to the internet only to send the anonymous statistics described above (unless you turn them off) and through the platform's store to show prices and process in-app purchases, if any: Apple's StoreKit on Mac, the Microsoft Store on Windows; Apple and Microsoft handle that data under their own privacy policies. Tinta never sees your payment details. Tinta downloads nothing else.</p>
   <h2>Third-party apps and plugins</h2>
   <p>Editors you theme with Tinta (for example Claude Code, Visual Studio Code or JetBrains IDEs) are separate products with their own privacy policies. The optional Tinta plugin for Claude Code, the companion extension for Visual Studio Code and the companion plugin for JetBrains IDEs are downloaded by those apps from their own marketplaces or repositories; they apply colors locally and collect no data.</p>
   <h2>Children</h2>
@@ -465,10 +475,10 @@ section.block { padding-top: 88px; }
 </section>
 <section data-lang="it">
   <h1>Informativa sulla privacy</h1>
-  <p class="fine">Ultimo aggiornamento: 4 novembre 2026</p>
+  <p class="fine">Ultimo aggiornamento: 5 novembre 2026</p>
   <p class="lead">In breve: nessun account, nessuna pubblicit&agrave;, nessun tracciamento. Tinta invia solo statistiche d'uso anonime, che puoi spegnere nelle Impostazioni.</p>
   <h2>Statistiche d'uso anonime</h2>
-  <p>Per capire quali funzioni si usano e cosa migliorare, Tinta – Code Themes (&laquo;Tinta&raquo;, &laquo;l'app&raquo;) invia eventi anonimi tramite <strong>Aptabase</strong>, un servizio di statistiche attento alla privacy. Un evento dice cosa &egrave; successo nell'app (per esempio &laquo;app aperta&raquo;, &laquo;palette in anteprima&raquo;, &laquo;tema applicato a un tipo di editor&raquo;) con il contesto tecnico: versione dell'app, versione di macOS, lingua dell'interfaccia e un numero di sessione casuale che cambia a ogni sessione.</p>
+  <p>Per capire quali funzioni si usano e cosa migliorare, Tinta – Code Themes (&laquo;Tinta&raquo;, &laquo;l'app&raquo;) invia eventi anonimi tramite <strong>Aptabase</strong>, un servizio di statistiche attento alla privacy. Un evento dice cosa &egrave; successo nell'app (per esempio &laquo;app aperta&raquo;, &laquo;palette in anteprima&raquo;, &laquo;tema applicato a un tipo di editor&raquo;) con il contesto tecnico: versione dell'app, sistema operativo (macOS o Windows) e sua versione, lingua dell'interfaccia e un numero di sessione casuale che cambia a ogni sessione.</p>
   <ul>
     <li>Non vengono inviati nome, email, account, nomi di file, percorsi di cartelle, contenuti di file, codice o contenuto dei temi.</li>
     <li>Non viene raccolto alcun identificativo pubblicitario, del dispositivo o dell'hardware. Aptabase usa l'indirizzo IP e lo user agent solo in memoria per ricavare paese/regione e un identificativo pseudonimo che cambia ogni 24 ore; l'indirizzo IP non viene mai conservato.</li>
@@ -477,15 +487,16 @@ section.block { padding-top: 88px; }
     <li><strong>Come rinunciare:</strong> spegni &laquo;Invia statistiche anonime&raquo; in Tinta &rsaquo; Impostazioni. Da quel momento non parte pi&ugrave; alcun evento.</li>
     <li>Base giuridica (GDPR): legittimo interesse a migliorare l'app (art. 6, par. 1, lett. f), bilanciato dall'anonimato dei dati e dalla possibilit&agrave; di rinuncia.</li>
   </ul>
-  <p>L'etichetta privacy dell'App Store indica &laquo;Dati d'uso &ndash; Interazione con il prodotto&raquo; e &laquo;Posizione approssimativa&raquo; per le statistiche, non collegati a te e non usati per tracciarti.</p>
-  <h2>Cosa resta sul tuo Mac</h2>
+  <p>Vale allo stesso modo per Tinta per Mac e Tinta per Windows. L'etichetta privacy dell'App Store indica &laquo;Dati d'uso &ndash; Interazione con il prodotto&raquo; e &laquo;Posizione approssimativa&raquo; per le statistiche, non collegati a te e non usati per tracciarti.</p>
+  <h2>Cosa resta sul tuo computer</h2>
   <ul>
-    <li>I tuoi temi, le preferenze e l'elenco degli editor collegati sono salvati in locale, nel contenitore protetto (sandbox) dell'app.</li>
-    <li>Quando colleghi un editor, macOS ti chiede di scegliere la sua cartella. Tinta conserva un segnalibro di sicurezza solo per quella cartella e lo usa solo per scriverci file di tema e di impostazioni (colori). Prima di modificare un file di impostazioni ne salva una copia accanto. &laquo;Scollega&raquo; toglie cio&grave; che Tinta ha aggiunto, ripristina le copie ed elimina il segnalibro.</li>
-    <li>Per mostrare se un editor &egrave; collegato, Tinta legge i file di impostazioni nelle cartelle che hai concesso. Il loro contenuto non lascia mai il tuo Mac.</li>
+    <li>I tuoi temi, le preferenze e l'elenco degli editor collegati sono salvati in locale: sul Mac nel contenitore protetto (sandbox) dell'app, su Windows nella cartella dei dati dell'app.</li>
+    <li>Sul Mac, quando colleghi un editor, macOS ti chiede di scegliere la sua cartella. Tinta conserva un segnalibro di sicurezza solo per quella cartella e lo usa solo per scriverci file di tema e di impostazioni (colori). Prima di modificare un file di impostazioni ne salva una copia accanto. &laquo;Scollega&raquo; toglie cio&grave; che Tinta ha aggiunto, ripristina le copie ed elimina il segnalibro.</li>
+    <li>Su Windows, collegare un editor permette a Tinta di scrivere i suoi file di tema e di impostazioni (colori) nelle cartelle di quell'editor nel tuo profilo utente. Tinta annota cosa cambia nella propria cartella dei dati, e &laquo;Scollega&raquo; rimette ogni file com'era.</li>
+    <li>Per mostrare se un editor &egrave; collegato, Tinta legge i file di impostazioni nelle cartelle che hai concesso (su Windows, in quelle degli editor collegati). Il loro contenuto non lascia mai il tuo computer.</li>
   </ul>
   <h2>Rete</h2>
-  <p>Tinta si collega a internet solo per inviare le statistiche anonime descritte sopra (se non le spegni) e tramite StoreKit di Apple, usato da macOS per mostrare i prezzi ed elaborare gli eventuali acquisti in-app; Apple tratta quei dati secondo la propria informativa. Tinta non vede mai i tuoi dati di pagamento e non scarica nient'altro.</p>
+  <p>Tinta si collega a internet solo per inviare le statistiche anonime descritte sopra (se non le spegni) e tramite lo store della piattaforma per mostrare i prezzi ed elaborare gli eventuali acquisti in-app: StoreKit di Apple sul Mac, il Microsoft Store su Windows; Apple e Microsoft trattano quei dati secondo le proprie informative. Tinta non vede mai i tuoi dati di pagamento e non scarica nient'altro.</p>
   <h2>App e plugin di terzi</h2>
   <p>Gli editor a cui applichi i temi (per esempio Claude Code, Visual Studio Code o gli IDE JetBrains) sono prodotti separati con le proprie informative. Il plugin Tinta per Claude Code, l'estensione compagna per Visual Studio Code e il plugin compagno per gli IDE JetBrains, tutti facoltativi, sono scaricati da quelle app dai rispettivi marketplace o repository; applicano i colori in locale e non raccolgono dati.</p>
   <h2>Minori</h2>
@@ -504,7 +515,7 @@ section.block { padding-top: 88px; }
     <a class="brand" href="index.html"><img src="img/icon-64.png" width="30" height="30" alt="">Tinta <small>Code Themes</small></a>
     <nav aria-label="Footer"><a href="index.html#live">Previews</a><a href="index.html#pricing">Pricing</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="license.html">License</a><a href="mailto:usableutilities@gmail.com">usableutilities@gmail.com</a><a href="https://apps.apple.com/app/id6830685209">Mac App Store</a></nav>
   </div>
-  <p class="legal">Tinta is an independent app, not affiliated with or endorsed by Anthropic, Microsoft, JetBrains or Apple. Claude and Claude Code are trademarks of Anthropic, PBC; Visual Studio Code of Microsoft Corporation; IntelliJ IDEA and other JetBrains product names of JetBrains s.r.o.; Xcode and Mac App Store of Apple Inc. Other names belong to their respective owners and are used only to describe compatibility. This website uses no cookies, analytics or external resources.</p>
+  <p class="legal">Tinta is an independent app, not affiliated with or endorsed by Anthropic, Microsoft, JetBrains or Apple. Claude and Claude Code are trademarks of Anthropic, PBC; Visual Studio Code of Microsoft Corporation; IntelliJ IDEA and other JetBrains product names of JetBrains s.r.o.; Windows, PowerShell and Microsoft Store of Microsoft Corporation; Xcode, Mac and Mac App Store of Apple Inc. Other names belong to their respective owners and are used only to describe compatibility. This website uses no cookies, analytics or external resources.</p>
   <p class="copy">&copy; 2026 UsableUtilities</p>
 </div></footer>
 <script>
